@@ -6,6 +6,7 @@ from django.db import models
 # Create your models here.
 class Post(models.Model):
     name = models.TextField(max_length=10)
+    phone_number = models.TextField(default=None, blank=True, null=True, max_length=10)
     CUR = (('Shekel', '₪'), ('Dollar', '$'), ('Euro', '€'))
     cur_to_get = models.CharField(choices=CUR, blank=True, max_length=20)
     cur_to_give = models.CharField(choices=CUR, blank=True, max_length=20)

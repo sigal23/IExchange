@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <body>
+        <h1>hi</h1>
+        {% for post in posts.all %}
+        <h3>{{ post.name }}</h3>
+        <p>{{ post.city }}</p>
+        {% endfor %}
+    </body>
+</html>
+

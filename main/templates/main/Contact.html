@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-
-{% load static %}
-
-
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static '/main/css/nicepage.css' %}" media="screen">
-<link rel="stylesheet" href="{% static '/main/css/Home.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'main/js/jquery.js' %}" "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'main/js/nicepage.js' %}" "="" defer=""></script>
+    <title>Contact</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Contact.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.17.7, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -24,16 +19,13 @@
 		"logo": "images/1.jpg"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
+    <meta property="og:title" content="Contact">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-
-  </head>
-  
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-3 u-border-custom-color-1 u-clearfix u-header" id="sec-bf95"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="296" data-image-height="180">
-          <img src="{% static 'main/images/1.jpg' %}" class="u-logo-image u-logo-image-1">
+          <img src="images/1.jpg" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
@@ -43,17 +35,11 @@
 </g></svg>
             </a>
           </div>
-          {% if user.is_authenticated %}
-          Logeed in {{ user.username }} <a href={% url 'logout' %}>Logout</a>
-        {% else %}
-          Logged Out <a href={% url 'login' %}>Login</a> or <a href={% url 'signup' %}>SignUp</a>
-        {% endif %}
           <div class="u-nav-container">
             <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href="Home.html" style="padding: 10px;">Home</a>
 </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href="About.html" style="padding: 10px;">About</a>
 </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href="Contact.html" style="padding: 10px;">Contact</a>
 </li></ul>
-
           </div>
           <div class="u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
@@ -85,27 +71,7 @@
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg><img></span>&nbsp;lOgin
         </a>
-      </div></header>
-    <section class="u-clearfix u-section-1" id="sec-83ab">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            {% for post in posts.all %}
-            <div class="u-border-3 u-border-grey-40 u-container-style u-custom-item u-hover-feature u-list-item u-repeater-item u-list-item-1">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h3> {{ post.amount }} {{ post.cur_to_give }} to {{ post.cur_to_get }} </h3>
-                <h5>{{ post.name }} - {{ post.phone_number }}</h5>
-                <p>{{ post.area }}</p>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-      
-      
-      
-    </section>
+      </div></header> 
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
