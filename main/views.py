@@ -1,14 +1,15 @@
+#from ast import main
 from django.shortcuts import render
 from .models import Post
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model, login, logout, authenticate
+from django.views.generic.edit import UpdateView, CreateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 import os
 # Create your views here.
 def home(request):
-    print("i am here")
     posts = Post.objects.all()
     context = {'posts': posts}
-    print("i am here2")
     return render(request, 'main/home.html', context)
 
 def post_list(request):
@@ -38,3 +39,14 @@ def signup(request):
             print("not valid")
             error = form.errors
             return render(request, 'registration/signup.html', {'form':UserCreationForm(), 'error': error})
+
+class MainCreatePost(LoginRequiredMixin, CreateView):
+    model=Post
+    fields=['name', 'phone_number', 'cur_to_get', 'cur_to_give', 'amount', 'area', 'city']
+
+    def form_valid(self, form):
+        obj=form.save(commit=False)
+        obj.user = self.request.user
+        # need to add verification to fields.
+        obj.save()
+        return super().form_valid(form)
