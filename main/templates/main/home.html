@@ -21,23 +21,23 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "IExchange",
-		"logo": "images/1.jpg"
+		"logo": "images/myLogo.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-
-  </head>
+  
+  
   
   </head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-3 u-border-custom-color-1 u-clearfix u-header" id="sec-bf95"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="296" data-image-height="180">
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
           <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
-            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
+          <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-white" href="#" style="background-image: none;">
               <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
               <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
 </g></svg>
@@ -48,68 +48,440 @@
         {% else %}
           Logged Out <a href={% url 'login' %}>Login</a> or <a href={% url 'signup' %}>SignUp</a>
         {% endif %}
-          <div class="u-nav-container">
-            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href={% url 'home' %} style="padding: 10px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href={% url 'create_post' %} style="padding: 10px;">Create Post</a>
-</li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href="Contact.html" style="padding: 10px;">Contact</a>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 0px;">עוד</a><div class="u-nav-popup"><ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="manual.html">אופן השימוש</a>
+																																																																																			   
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="precaution.html">אמצעי זהירות</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Questions-Answers.html">שאלות ותשובות</a>
 </li></ul>
-
+</div>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'about' %} style="padding: 10px 0px;">אודות</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Contact.html" style="padding: 10px 0px;">צור קשר</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Create-Post.html" style="padding: 10px 0px;">פוסט חדש</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="PersonalPost.html" style="padding: 10px 0px;">הפוסטים שלי</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'home' %} style="padding: 10px 0px;">דף הבית</a>
+</li></ul>																																																																																																																																																												 		  
           </div>
-          <div class="u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav u-white">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'home' %}>Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'create_post' %}>Create Post</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link">עוד</a><div class="u-nav-popup"><ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="manual.html">אופן השימוש</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="precaution.html">אמצעי זהירות</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Questions-Answers.html">שאלות ותשובות</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">אודות</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">צור קשר</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Create-Post.html">פוסט חדש</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PersonalPost.html">הפוסטים שלי</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">דף הבית</a>
 </li></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-        <a href="https://nicepage.com/c/team-html-templates" class="u-btn u-button-style u-custom-color-1 u-hover-custom-color-2 u-btn-1"><span class="u-icon"><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
-	c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348
-	c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98
-	c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033
-	c0.724,0.125,1.456,0.225,2.197,0.292c0.09,0.008,0.18,0.013,0.271,0.021C25.998,54.961,26.744,55,27.5,55
-	c0.749,0,1.488-0.039,2.222-0.098c0.093-0.008,0.186-0.013,0.279-0.021c0.735-0.067,1.461-0.164,2.178-0.287
-	c0.062-0.011,0.125-0.022,0.187-0.034c2.297-0.412,4.495-1.109,6.557-2.055c0.076-0.035,0.153-0.068,0.229-0.104
-	c0.617-0.29,1.22-0.603,1.811-0.936c0.147-0.083,0.293-0.167,0.439-0.253c0.538-0.317,1.067-0.648,1.581-1
-	c0.185-0.126,0.366-0.259,0.549-0.391c0.439-0.316,0.87-0.642,1.289-0.983c0.093-0.075,0.193-0.14,0.284-0.217l0.915-0.764
-	l-0.027-0.023C51.523,42.802,55,35.55,55,27.5z M2,27.5C2,13.439,13.439,2,27.5,2S53,13.439,53,27.5
-	c0,7.577-3.325,14.389-8.589,19.063c-0.294-0.203-0.59-0.385-0.893-0.537l-8.467-4.233c-0.76-0.38-1.232-1.144-1.232-1.993v-2.957
-	c0.196-0.242,0.403-0.516,0.617-0.817c1.096-1.548,1.975-3.27,2.616-5.123c1.267-0.602,2.085-1.864,2.085-3.289v-3.545
-	c0-0.867-0.318-1.708-0.887-2.369v-4.667c0.052-0.52,0.236-3.448-1.883-5.864C34.524,9.065,31.541,8,27.5,8
-	s-7.024,1.065-8.867,3.168c-2.119,2.416-1.935,5.346-1.883,5.864v4.667c-0.568,0.661-0.887,1.502-0.887,2.369v3.545
-	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
-	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg><img></span>&nbsp;lOgin
-        </a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
       </div></header>
-    <section class="u-clearfix u-section-1" id="sec-83ab">
+    <section class="u-align-center u-clearfix u-image u-section-1" id="sec-83ab" data-image-width="3936" data-image-height="2624">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
+        <div class="u-align-center u-border-2 u-border-white u-custom-color-3 u-form u-radius-50 u-form-1">
+          <form action="//publish.nicepage.com/Form/Process" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-0 u-inner-form" source="email" name="form-1" style="padding: 14px;">
+            <div class="u-form-group u-form-select u-label-left u-form-group-1">
+              <label for="select-700a" class="u-label">אזור</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-700a" name="area" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-1">
+                  <option value="צפון">צפון</option>
+                  <option value="מרכז">מרכז</option>
+                  <option value="ירושלים והסביבה">ירושלים והסביבה</option>
+                  <option value="דרום">דרום</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>
+            <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-left u-form-group-2">
+              <label for="select-0447" class="u-label">מטבע לקבלה</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-0447" name="currencyGet" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-2">
+                  <option value="אירו">אירו</option>
+                  <option value="אסקודו כף ורדה">אסקודו כף ורדה</option>
+                  <option value="אפגני אפגני">אפגני אפגני</option>
+                  <option value="אריארי מלגשי">אריארי מלגשי</option>
+                  <option value="בהט תאילנדי">בהט תאילנדי</option>
+                  <option value="בוליביאנו">בוליביאנו</option>
+                  <option value="בוליבר ונצואלי">בוליבר ונצואלי</option>
+                  <option value="ביר אתיופי">ביר אתיופי</option>
+                  <option value="בלבואה פנמי">בלבואה פנמי</option>
+                  <option value="גוורני פראגוואי">גוורני פראגוואי</option>
+                  <option value="גורד האיטי">גורד האיטי</option>
+                  <option value="גילדר של האנטילים ההולנדיים">גילדר של האנטילים ההולנדיים</option>
+                  <option value="גריבנה אוקראיני">גריבנה אוקראיני</option>
+                  <option value="דולר אוסטרלי">דולר אוסטרלי</option>
+                  <option value="דולר איי שלמה">דולר איי שלמה</option>
+                  <option value="דולר אמריקאי">דולר אמריקאי</option>
+                  <option value="דולר בהאמי">דולר בהאמי</option>
+                  <option value="דולר בליזי">דולר בליזי</option>
+                  <option value="דולר ברבדיאני">דולר ברבדיאני</option>
+                  <option value="דולר ברוניי">דולר ברוניי</option>
+                  <option value="דולר ברמודה">דולר ברמודה</option>
+                  <option value="דולר ג׳מייקני">דולר ג׳מייקני</option>
+                  <option value="דולר גיאני">דולר גיאני</option>
+                  <option value="דולר הונג קונגי">דולר הונג קונגי</option>
+                  <option value="דולר טייוואני חדש">דולר טייוואני חדש</option>
+                  <option value="דולר טרינידדי">דולר טרינידדי</option>
+                  <option value="דולר ליברי">דולר ליברי</option>
+                  <option value="דולר מזרח קריבי">דולר מזרח קריבי</option>
+                  <option value="דולר ניו זילנדי">דולר ניו זילנדי</option>
+                  <option value="דולר נמיבי">דולר נמיבי</option>
+                  <option value="דולר סורינאמי">דולר סורינאמי</option>
+                  <option value="דולר סינגפורי">דולר סינגפורי</option>
+                  <option value="דולר פיג׳י">דולר פיג׳י</option>
+                  <option value="דולר קיימאני">דולר קיימאני</option>
+                  <option value="דולר קנדי">דולר קנדי</option>
+                  <option value="דונג וייטנאמי">דונג וייטנאמי</option>
+                  <option value="דינר אלג׳ירי">דינר אלג׳ירי</option>
+                  <option value="דינר בחרייני">דינר בחרייני</option>
+                  <option value="דינר טוניסאי">דינר טוניסאי</option>
+                  <option value="דינר ירדני">דינר ירדני</option>
+                  <option value="דינר כוויתי">דינר כוויתי</option>
+                  <option value="דינר לובי">דינר לובי</option>
+                  <option value="דינר מקדוני">דינר מקדוני</option>
+                  <option value="דינר סרבי">דינר סרבי</option>
+                  <option value="דינר עיראקי">דינר עיראקי</option>
+                  <option value="דירהם מרוקאי">דירהם מרוקאי</option>
+                  <option value="דירהם של איחוד הנסיכויות הערביות">דירהם של איחוד הנסיכויות הערביות</option>
+                  <option value="דלאסי גמבי">דלאסי גמבי</option>
+                  <option value="דראם ארמני">דראם ארמני</option>
+                  <option value="ואטו של ונואטו">ואטו של ונואטו</option>
+                  <option value="וון דרום קוריאני">וון דרום קוריאני</option>
+                  <option value="וון צפון קוריאני">וון צפון קוריאני</option>
+                  <option value="זלוטי פולני">זלוטי פולני</option>
+                  <option value="טאלה סמואי">טאלה סמואי</option>
+                  <option value="טאקה בנגלדשי">טאקה בנגלדשי</option>
+                  <option value="טוגרוג מונגולי">טוגרוג מונגולי</option>
+                  <option value="טנגה קזחסטני">טנגה קזחסטני</option>
+                  <option value="יואן סיני">יואן סיני</option>
+                  <option value="ין יפני">ין יפני</option>
+                  <option value="כתר איסלנדי">כתר איסלנדי</option>
+                  <option value="כתר דני">כתר דני</option>
+                  <option value="כתר נורווגי">כתר נורווגי</option>
+                  <option value="כתר שוודי">כתר שוודי</option>
+                  <option value="לאו רומני">לאו רומני</option>
+                  <option value="לב בולגרי">לב בולגרי</option>
+                  <option value="לוטי לסותי">לוטי לסותי</option>
+                  <option value="ליאו מולדובני">ליאו מולדובני</option>
+                  <option value="ליאון סיירה לאוני">ליאון סיירה לאוני</option>
+                  <option value="לילנגני סווזי">לילנגני סווזי</option>
+                  <option value="לירה דרום-סודנית">לירה דרום-סודנית</option>
+                  <option value="לירה טורקית חדשה">לירה טורקית חדשה</option>
+                  <option value="לירה לבנונית">לירה לבנונית</option>
+                  <option value="לירה מצרית">לירה מצרית</option>
+                  <option value="לירה סודנית">לירה סודנית</option>
+                  <option value="לירה סורית">לירה סורית</option>
+                  <option value="לירה שטרלינג">לירה שטרלינג</option>
+                  <option value="לירה של איי פוקלנד">לירה של איי פוקלנד</option>
+                  <option value="למפירה הונדורי">למפירה הונדורי</option>
+                  <option value="לק אלבני">לק אלבני</option>
+                  <option value="לרי גאורגי">לרי גאורגי</option>
+                  <option value="מאוריטניה אוגיאיה">מאוריטניה אוגיאיה</option>
+                  <option value="מאנאט אזרביג׳ני">מאנאט אזרביג׳ני</option>
+                  <option value="מאנאט טורקמני">מאנאט טורקמני</option>
+                  <option value="מארק בר המרה של בוסניה־הרצגובינה">מארק בר המרה של בוסניה־הרצגובינה</option>
+                  <option value="מטיקל מוזמביני">מטיקל מוזמביני</option>
+                  <option value="נאירה ניגרי">נאירה ניגרי</option>
+                  <option value="נאקפה אריתראי">נאקפה אריתראי</option>
+                  <option value="נגולטרום בהוטני">נגולטרום בהוטני</option>
+                  <option value="סאו טומה ופרינסיפה דברה">סאו טומה ופרינסיפה דברה</option>
+                  <option value="סדי גאני">סדי גאני</option>
+                  <option value="סול פרואני">סול פרואני</option>
+                  <option value="סום אוזבקי">סום אוזבקי</option>
+                  <option value="סום קירגיזי">סום קירגיזי</option>
+                  <option value="סומוני טג׳קיסטני">סומוני טג׳קיסטני</option>
+                  <option value="פאונד גיברלטר">פאונד גיברלטר</option>
+                  <option value="פאונד סנט הלני">פאונד סנט הלני</option>
+                  <option value="פאנגה טונגי">פאנגה טונגי</option>
+                  <option value="פולה בוצוואני">פולה בוצוואני</option>
+                  <option value="פורינט הונגרי">פורינט הונגרי</option>
+                  <option value="פזו דומיניקני">פזו דומיניקני</option>
+                  <option value="פזו מקסיקני">פזו מקסיקני</option>
+                  <option value="פזו פיליפיני">פזו פיליפיני</option>
+                  <option value="פזו קובני">פזו קובני</option>
+                  <option value="פטקה של מקאו">פטקה של מקאו</option>
+                  <option value="פלורין של ארובה">פלורין של ארובה</option>
+                  <option value="פסו אורוגוואי">פסו אורוגוואי</option>
+                  <option value="פסו ארגנטינאי">פסו ארגנטינאי</option>
+                  <option value="פסו צ׳ילאני">פסו צ׳ילאני</option>
+                  <option value="פסו קולומביאני">פסו קולומביאני</option>
+                  <option value="פרנק בורונדי">פרנק בורונדי</option>
+                  <option value="פרנק ג׳יבוטי">פרנק ג׳יבוטי</option>
+                  <option value="פרנק גינאי">פרנק גינאי</option>
+                  <option value="פרנק פולינזיה הצרפתית">פרנק פולינזיה הצרפתית</option>
+                  <option value="פרנק קומורואי">פרנק קומורואי</option>
+                  <option value="פרנק קונגולזי">פרנק קונגולזי</option>
+                  <option value="פרנק רואנדי">פרנק רואנדי</option>
+                  <option value="פרנק שוויצרי">פרנק שוויצרי</option>
+                  <option value="קואנזה אנגולי">קואנזה אנגולי</option>
+                  <option value="קואצ׳ה מלאוי">קואצ׳ה מלאוי</option>
+                  <option value="קוואצ׳ה זמבית">קוואצ׳ה זמבית</option>
+                  <option value="קולון סלבדורי">קולון סלבדורי</option>
+                  <option value="קולון קוסטה־ריקני">קולון קוסטה־ריקני</option>
+                  <option value="קונה קרואטי">קונה קרואטי</option>
+                  <option value="קורדובה ניקרגואה">קורדובה ניקרגואה</option>
+                  <option value="קורונה צ׳כית">קורונה צ׳כית</option>
+                  <option value="קיאט מיאנמרי">קיאט מיאנמרי</option>
+                  <option value="קינה של פפואה גינאה החדשה">קינה של פפואה גינאה החדשה</option>
+                  <option value="קיפ לאי">קיפ לאי</option>
+                  <option value="קצל גואטמלי">קצל גואטמלי</option>
+                  <option value="ראנד דרום אפריקאי">ראנד דרום אפריקאי</option>
+                  <option value="רובל בלרוסי">רובל בלרוסי</option>
+                  <option value="רובל רוסי">רובל רוסי</option>
+                  <option value="רופי הודי">רופי הודי</option>
+                  <option value="רופי מאוריציני">רופי מאוריציני</option>
+                  <option value="רופי נפאלי">רופי נפאלי</option>
+                  <option value="רופי סיישלי">רופי סיישלי</option>
+                  <option value="רופי סרי לנקי">רופי סרי לנקי</option>
+                  <option value="רופי פקיסטני">רופי פקיסטני</option>
+                  <option value="רופיה אינדונזית">רופיה אינדונזית</option>
+                  <option value="רופיה מלדיבית">רופיה מלדיבית</option>
+                  <option value="ריאל איראני">ריאל איראני</option>
+                  <option value="ריאל ברזילאי">ריאל ברזילאי</option>
+                  <option value="ריאל סעודי">ריאל סעודי</option>
+                  <option value="ריאל עומאני">ריאל עומאני</option>
+                  <option value="ריאל קטארי">ריאל קטארי</option>
+                  <option value="ריאל תימני">ריאל תימני</option>
+                  <option value="ריל קמבודי">ריל קמבודי</option>
+                  <option value="רינגיט מלזי">רינגיט מלזי</option>
+                  <option value="שילינג אוגנדי">שילינג אוגנדי</option>
+                  <option value="שילינג טנזני">שילינג טנזני</option>
+                  <option value="שילינג סומאלי">שילינג סומאלי</option>
+                  <option value="שילינג קנייאתי">שילינג קנייאתי</option>
+                  <option value="שקל חדש">שקל חדש</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>
+            <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-left u-form-group-3">
+              <label for="select-3412" class="u-label">מטבע לנתינה</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-3412" name="currencyGive" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-3">
+                  <option value="אירו">אירו</option>
+                  <option value="אסקודו כף ורדה">אסקודו כף ורדה</option>
+                  <option value="אפגני אפגני">אפגני אפגני</option>
+                  <option value="אריארי מלגשי">אריארי מלגשי</option>
+                  <option value="בהט תאילנדי">בהט תאילנדי</option>
+                  <option value="בוליביאנו">בוליביאנו</option>
+                  <option value="בוליבר ונצואלי">בוליבר ונצואלי</option>
+                  <option value="ביר אתיופי">ביר אתיופי</option>
+                  <option value="בלבואה פנמי">בלבואה פנמי</option>
+                  <option value="גוורני פראגוואי">גוורני פראגוואי</option>
+                  <option value="גורד האיטי">גורד האיטי</option>
+                  <option value="גילדר של האנטילים ההולנדיים">גילדר של האנטילים ההולנדיים</option>
+                  <option value="גריבנה אוקראיני">גריבנה אוקראיני</option>
+                  <option value="דולר אוסטרלי">דולר אוסטרלי</option>
+                  <option value="דולר איי שלמה">דולר איי שלמה</option>
+                  <option value="דולר אמריקאי">דולר אמריקאי</option>
+                  <option value="דולר בהאמי">דולר בהאמי</option>
+                  <option value="דולר בליזי">דולר בליזי</option>
+                  <option value="דולר ברבדיאני">דולר ברבדיאני</option>
+                  <option value="דולר ברוניי">דולר ברוניי</option>
+                  <option value="דולר ברמודה">דולר ברמודה</option>
+                  <option value="דולר ג׳מייקני">דולר ג׳מייקני</option>
+                  <option value="דולר גיאני">דולר גיאני</option>
+                  <option value="דולר הונג קונגי">דולר הונג קונגי</option>
+                  <option value="דולר טייוואני חדש">דולר טייוואני חדש</option>
+                  <option value="דולר טרינידדי">דולר טרינידדי</option>
+                  <option value="דולר ליברי">דולר ליברי</option>
+                  <option value="דולר מזרח קריבי">דולר מזרח קריבי</option>
+                  <option value="דולר ניו זילנדי">דולר ניו זילנדי</option>
+                  <option value="דולר נמיבי">דולר נמיבי</option>
+                  <option value="דולר סורינאמי">דולר סורינאמי</option>
+                  <option value="דולר סינגפורי">דולר סינגפורי</option>
+                  <option value="דולר פיג׳י">דולר פיג׳י</option>
+                  <option value="דולר קיימאני">דולר קיימאני</option>
+                  <option value="דולר קנדי">דולר קנדי</option>
+                  <option value="דונג וייטנאמי">דונג וייטנאמי</option>
+                  <option value="דינר אלג׳ירי">דינר אלג׳ירי</option>
+                  <option value="דינר בחרייני">דינר בחרייני</option>
+                  <option value="דינר טוניסאי">דינר טוניסאי</option>
+                  <option value="דינר ירדני">דינר ירדני</option>
+                  <option value="דינר כוויתי">דינר כוויתי</option>
+                  <option value="דינר לובי">דינר לובי</option>
+                  <option value="דינר מקדוני">דינר מקדוני</option>
+                  <option value="דינר סרבי">דינר סרבי</option>
+                  <option value="דינר עיראקי">דינר עיראקי</option>
+                  <option value="דירהם מרוקאי">דירהם מרוקאי</option>
+                  <option value="דירהם של איחוד הנסיכויות הערביות">דירהם של איחוד הנסיכויות הערביות</option>
+                  <option value="דלאסי גמבי">דלאסי גמבי</option>
+                  <option value="דראם ארמני">דראם ארמני</option>
+                  <option value="ואטו של ונואטו">ואטו של ונואטו</option>
+                  <option value="וון דרום קוריאני">וון דרום קוריאני</option>
+                  <option value="וון צפון קוריאני">וון צפון קוריאני</option>
+                  <option value="זלוטי פולני">זלוטי פולני</option>
+                  <option value="טאלה סמואי">טאלה סמואי</option>
+                  <option value="טאקה בנגלדשי">טאקה בנגלדשי</option>
+                  <option value="טוגרוג מונגולי">טוגרוג מונגולי</option>
+                  <option value="טנגה קזחסטני">טנגה קזחסטני</option>
+                  <option value="יואן סיני">יואן סיני</option>
+                  <option value="ין יפני">ין יפני</option>
+                  <option value="כתר איסלנדי">כתר איסלנדי</option>
+                  <option value="כתר דני">כתר דני</option>
+                  <option value="כתר נורווגי">כתר נורווגי</option>
+                  <option value="כתר שוודי">כתר שוודי</option>
+                  <option value="לאו רומני">לאו רומני</option>
+                  <option value="לב בולגרי">לב בולגרי</option>
+                  <option value="לוטי לסותי">לוטי לסותי</option>
+                  <option value="ליאו מולדובני">ליאו מולדובני</option>
+                  <option value="ליאון סיירה לאוני">ליאון סיירה לאוני</option>
+                  <option value="לילנגני סווזי">לילנגני סווזי</option>
+                  <option value="לירה דרום-סודנית">לירה דרום-סודנית</option>
+                  <option value="לירה טורקית חדשה">לירה טורקית חדשה</option>
+                  <option value="לירה לבנונית">לירה לבנונית</option>
+                  <option value="לירה מצרית">לירה מצרית</option>
+                  <option value="לירה סודנית">לירה סודנית</option>
+                  <option value="לירה סורית">לירה סורית</option>
+                  <option value="לירה שטרלינג">לירה שטרלינג</option>
+                  <option value="לירה של איי פוקלנד">לירה של איי פוקלנד</option>
+                  <option value="למפירה הונדורי">למפירה הונדורי</option>
+                  <option value="לק אלבני">לק אלבני</option>
+                  <option value="לרי גאורגי">לרי גאורגי</option>
+                  <option value="מאוריטניה אוגיאיה">מאוריטניה אוגיאיה</option>
+                  <option value="מאנאט אזרביג׳ני">מאנאט אזרביג׳ני</option>
+                  <option value="מאנאט טורקמני">מאנאט טורקמני</option>
+                  <option value="מארק בר המרה של בוסניה־הרצגובינה">מארק בר המרה של בוסניה־הרצגובינה</option>
+                  <option value="מטיקל מוזמביני">מטיקל מוזמביני</option>
+                  <option value="נאירה ניגרי">נאירה ניגרי</option>
+                  <option value="נאקפה אריתראי">נאקפה אריתראי</option>
+                  <option value="נגולטרום בהוטני">נגולטרום בהוטני</option>
+                  <option value="סאו טומה ופרינסיפה דברה">סאו טומה ופרינסיפה דברה</option>
+                  <option value="סדי גאני">סדי גאני</option>
+                  <option value="סול פרואני">סול פרואני</option>
+                  <option value="סום אוזבקי">סום אוזבקי</option>
+                  <option value="סום קירגיזי">סום קירגיזי</option>
+                  <option value="סומוני טג׳קיסטני">סומוני טג׳קיסטני</option>
+                  <option value="פאונד גיברלטר">פאונד גיברלטר</option>
+                  <option value="פאונד סנט הלני">פאונד סנט הלני</option>
+                  <option value="פאנגה טונגי">פאנגה טונגי</option>
+                  <option value="פולה בוצוואני">פולה בוצוואני</option>
+                  <option value="פורינט הונגרי">פורינט הונגרי</option>
+                  <option value="פזו דומיניקני">פזו דומיניקני</option>
+                  <option value="פזו מקסיקני">פזו מקסיקני</option>
+                  <option value="פזו פיליפיני">פזו פיליפיני</option>
+                  <option value="פזו קובני">פזו קובני</option>
+                  <option value="פטקה של מקאו">פטקה של מקאו</option>
+                  <option value="פלורין של ארובה">פלורין של ארובה</option>
+                  <option value="פסו אורוגוואי">פסו אורוגוואי</option>
+                  <option value="פסו ארגנטינאי">פסו ארגנטינאי</option>
+                  <option value="פסו צ׳ילאני">פסו צ׳ילאני</option>
+                  <option value="פסו קולומביאני">פסו קולומביאני</option>
+                  <option value="פרנק בורונדי">פרנק בורונדי</option>
+                  <option value="פרנק ג׳יבוטי">פרנק ג׳יבוטי</option>
+                  <option value="פרנק גינאי">פרנק גינאי</option>
+                  <option value="פרנק פולינזיה הצרפתית">פרנק פולינזיה הצרפתית</option>
+                  <option value="פרנק קומורואי">פרנק קומורואי</option>
+                  <option value="פרנק קונגולזי">פרנק קונגולזי</option>
+                  <option value="פרנק רואנדי">פרנק רואנדי</option>
+                  <option value="פרנק שוויצרי">פרנק שוויצרי</option>
+                  <option value="קואנזה אנגולי">קואנזה אנגולי</option>
+                  <option value="קואצ׳ה מלאוי">קואצ׳ה מלאוי</option>
+                  <option value="קוואצ׳ה זמבית">קוואצ׳ה זמבית</option>
+                  <option value="קולון סלבדורי">קולון סלבדורי</option>
+                  <option value="קולון קוסטה־ריקני">קולון קוסטה־ריקני</option>
+                  <option value="קונה קרואטי">קונה קרואטי</option>
+                  <option value="קורדובה ניקרגואה">קורדובה ניקרגואה</option>
+                  <option value="קורונה צ׳כית">קורונה צ׳כית</option>
+                  <option value="קיאט מיאנמרי">קיאט מיאנמרי</option>
+                  <option value="קינה של פפואה גינאה החדשה">קינה של פפואה גינאה החדשה</option>
+                  <option value="קיפ לאי">קיפ לאי</option>
+                  <option value="קצל גואטמלי">קצל גואטמלי</option>
+                  <option value="ראנד דרום אפריקאי">ראנד דרום אפריקאי</option>
+                  <option value="רובל בלרוסי">רובל בלרוסי</option>
+                  <option value="רובל רוסי">רובל רוסי</option>
+                  <option value="רופי הודי">רופי הודי</option>
+                  <option value="רופי מאוריציני">רופי מאוריציני</option>
+                  <option value="רופי נפאלי">רופי נפאלי</option>
+                  <option value="רופי סיישלי">רופי סיישלי</option>
+                  <option value="רופי סרי לנקי">רופי סרי לנקי</option>
+                  <option value="רופי פקיסטני">רופי פקיסטני</option>
+                  <option value="רופיה אינדונזית">רופיה אינדונזית</option>
+                  <option value="רופיה מלדיבית">רופיה מלדיבית</option>
+                  <option value="ריאל איראני">ריאל איראני</option>
+                  <option value="ריאל ברזילאי">ריאל ברזילאי</option>
+                  <option value="ריאל סעודי">ריאל סעודי</option>
+                  <option value="ריאל עומאני">ריאל עומאני</option>
+                  <option value="ריאל קטארי">ריאל קטארי</option>
+                  <option value="ריאל תימני">ריאל תימני</option>
+                  <option value="ריל קמבודי">ריל קמבודי</option>
+                  <option value="רינגיט מלזי">רינגיט מלזי</option>
+                  <option value="שילינג אוגנדי">שילינג אוגנדי</option>
+                  <option value="שילינג טנזני">שילינג טנזני</option>
+                  <option value="שילינג סומאלי">שילינג סומאלי</option>
+                  <option value="שילינג קנייאתי">שילינג קנייאתי</option>
+                  <option value="שקל חדש">שקל חדש</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>
+            <div class="u-form-group u-form-partition-factor-2 u-label-left u-form-group-4">
+              <label for="text-abd6" class="u-label">עד סכום</label>
+              <input type="text" id="text-abd6" name="toAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-4">
+            </div>
+            <div class="u-form-group u-form-partition-factor-2 u-label-left u-form-group-5">
+              <label for="text-5a66" class="u-label">מסכום</label>
+              <input type="text" id="text-5a66" name="fromAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-5">
+            </div>
+            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+            <input type="hidden" value="" name="recaptchaResponse">
+            <input type="hidden" name="formServices" value="421e0687dfb40e5694578a0674b563e7">
+          </form>
+        </div>
+        <a href="https://nicepage.com/css-templates" class="u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-feature u-hover-white u-radius-49 u-white u-btn-1"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 52.966 52.966" x="0px" y="0px" style="width: 1em; height: 1em;"><circle style="fill:#57ABC1;" cx="21.983" cy="21" r="20"></circle><line style="fill:none;stroke:#556080;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="35.437" y1="35.798" x2="50.983" y2="51.966"></line><path style="fill:#7CCBD8;" d="M3.002,27.253c0.848,2.582,2.24,5.018,4.167,7.146L35.382,6.186
+	c-2.129-1.928-4.564-3.319-7.146-4.167L3.002,27.253z"></path><path style="fill:#556080;" d="M21.983,42c-11.58,0-21-9.42-21-21s9.42-21,21-21s21,9.42,21,21S33.562,42,21.983,42z M21.983,2
+	c-10.477,0-19,8.523-19,19s8.523,19,19,19s19-8.523,19-19S32.459,2,21.983,2z"></path></svg><img></span>&nbsp;
+        </a>
+        <div class="u-align-center u-list u-list-1">
+			<div class="u-repeater u-repeater-1">
             {% for post in posts.all %}
-            <div class="u-border-3 u-border-grey-40 u-container-style u-custom-item u-hover-feature u-list-item u-repeater-item u-list-item-1" style="text-align: right;">
+            <div class="u-align-center u-border-3 u-border-custom-color-4 u-container-style u-hover-feature u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1" style="text-align: right;">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <h3> {{ post.amount }} {{ post.cur_to_give }} to {{ post.cur_to_get }} </h3>
                 <h5>{{ post.name }} - {{ post.phone_number }}</h5>
-                <p>{{ post.area }}</p>
-              </div>
-            </div>
+                <p>{{ post.area }}</p>																																																	  																								 
+             </div>
+           </div>
             {% endfor %}
-          </div>
-        </div>
-      </div>
-      
-      
+	      </div>
+		</div>
+	</div>
       
     </section>
     
     
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
-      </div></footer>
+    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+          <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">פרויקט גמר החוג למערכות מידע אוניברסיטת חיפה</p>
+      </div></footer><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px; padding: 15px;" class="u-back-to-top u-icon u-icon-circle u-opacity u-opacity-85 u-palette-1-base" data-href="#">
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
+        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
+    </span>
   
 </body></html>

@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: linear-gradient(#2a34b1, #478ac9);
+  background-image: linear-gradient(#2b34b0, #478ac9);
 }
 
 .u-section-1 .u-sheet-1 {
@@ -8,7 +8,7 @@
 
 .u-section-1 .u-group-1 {
   width: 778px;
-  min-height: 472px;
+  min-height: 490px;
   box-shadow: 0px -2px 26px 0 rgba(0,0,0,0.25);
   height: auto;
   margin: 46px auto;
@@ -19,17 +19,18 @@
 }
 
 .u-section-1 .u-text-1 {
-  text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: 2px;
+  background-image: none;
   margin: 0 auto;
 }
 
 .u-section-1 .u-form-1 {
-  height: 328px;
+  height: 281px;
   width: 570px;
-  margin: 17px auto 0;
+  margin: 9px auto 0;
 }
 
 .u-section-1 .u-form-group-2 {
@@ -42,6 +43,7 @@
 
 .u-section-1 .u-btn-1 {
   background-image: none;
+  margin: 8px auto 0;
 }
 
 @media (max-width: 1199px) {
