@@ -42,11 +42,16 @@ def signup(request):
 
 class MainCreatePost(LoginRequiredMixin, CreateView):
     model=Post
-    fields=['name', 'phone_number', 'cur_to_get', 'cur_to_give', 'amount', 'area', 'city']
+    fields=['name', 'phone_number', 'cur_to_get', 'cur_to_give', 'amount', 'area', 'city', 'comment']
 
     def form_valid(self, form):
+        #form.instance.user = self.request.user
+        print(self.request.user)
         obj=form.save(commit=False)
+        print(self.request.user)
         obj.user = self.request.user
+        print(self.request.user)
         # need to add verification to fields.
         obj.save()
+        print(self.request.user)
         return super().form_valid(form)

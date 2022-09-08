@@ -1,13 +1,21 @@
+from contextlib import _RedirectStream
 from unicodedata import name
 from django.db import models
 from django.shortcuts import reverse
-#from django.contrib.auth import get_user_model
+from django.shortcuts import redirect
+from django.conf import settings
+from django.contrib.auth.models import User
 #from model_utils import Choices
 
 
 # Create your models here.
 class Post(models.Model):
-    user = models.TextField(max_length=40, default='admin')
+    #user = models.ForeignKey(
+    #    settings.AUTH_USER_MODEL,
+    #    related_name='written_posts',
+    #    on_delete=models.CASCADE)
+    #user = models.ForeignKey(User., on_delete=models.CASCADE)
+    user = models.CharField(max_length=40, default='admin')
     # if wwe will delete user - all the post of this user will delete
     name = models.TextField(max_length=10)
     phone_number = models.TextField(default=None, blank=True, null=True, max_length=10)
@@ -24,4 +32,4 @@ class Post(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('home')
+        return redirect('post_list')

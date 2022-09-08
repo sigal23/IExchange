@@ -49,8 +49,8 @@
           Logged Out <a href={% url 'login' %}>Login</a> or <a href={% url 'signup' %}>SignUp</a>
         {% endif %}
           <div class="u-nav-container">
-            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href="Home.html" style="padding: 10px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href="About.html" style="padding: 10px;">About</a>
+            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href={% url 'home' %} style="padding: 10px;">Home</a>
+</li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href={% url 'create_post' %} style="padding: 10px;">Create Post</a>
 </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-2" href="Contact.html" style="padding: 10px;">Contact</a>
 </li></ul>
 
@@ -59,8 +59,8 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'home' %}>Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'create_post' %}>Create Post</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
 </li></ul>
               </div>
@@ -91,7 +91,7 @@
         <div class="u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             {% for post in posts.all %}
-            <div class="u-border-3 u-border-grey-40 u-container-style u-custom-item u-hover-feature u-list-item u-repeater-item u-list-item-1">
+            <div class="u-border-3 u-border-grey-40 u-container-style u-custom-item u-hover-feature u-list-item u-repeater-item u-list-item-1" style="text-align: right;">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <h3> {{ post.amount }} {{ post.cur_to_give }} to {{ post.cur_to_get }} </h3>
                 <h5>{{ post.name }} - {{ post.phone_number }}</h5>
