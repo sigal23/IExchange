@@ -57,7 +57,7 @@
 </div>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'about' %} style="padding: 10px 0px;">אודות</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Contact.html" style="padding: 10px 0px;">צור קשר</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Create-Post.html" style="padding: 10px 0px;">פוסט חדש</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'create_post' %} style="padding: 10px 0px;">פוסט חדש</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="PersonalPost.html" style="padding: 10px 0px;">הפוסטים שלי</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'home' %} style="padding: 10px 0px;">דף הבית</a>
 </li></ul>																																																																																																																																																												 		  
@@ -461,9 +461,13 @@
             {% for post in posts.all %}
             <div class="u-align-center u-border-3 u-border-custom-color-4 u-container-style u-hover-feature u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1" style="text-align: right;">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h3> {{ post.amount }} {{ post.cur_to_give }} to {{ post.cur_to_get }} </h3>
-                <h5>{{ post.name }} - {{ post.phone_number }}</h5>
-                <p>{{ post.area }}</p>																																																	  																								 
+                <h3> נותן {{ post.amount }} {{ post.cur_to_give }} תמורת {{ post.cur_to_get }} </h3>
+                <h5><ins>שם</ins>: {{ post.name }} </h5>
+                <h5><ins>טלפון</ins>: {{ post.phone_number }}</h5>
+                <h5><ins>איזור</ins>: {{ post.area }}</h5>
+                <h5><ins>עיר</ins>: {{ post.city }}</h5>
+                <p><ins>הערות</ins>: {{ post.comment }}</p>
+                <p><ins>תאריך</ins>: 28/10/22</p>																																																	  																								 
              </div>
            </div>
             {% endfor %}
