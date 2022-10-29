@@ -49,12 +49,8 @@ class MainCreatePost(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         #form.instance.user = self.request.user
-        print(self.request.user)
         obj=form.save(commit=False)
-        print(self.request.user)
-        obj.user = self.request.user
-        print(self.request.user)
+        obj.user = str(self.request.user)
         # need to add verification to fields.
         obj.save()
-        print(self.request.user)
         return super().form_valid(form)

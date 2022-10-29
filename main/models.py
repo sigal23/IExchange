@@ -32,4 +32,4 @@ class Post(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return redirect('post_list')
+        return "/"
