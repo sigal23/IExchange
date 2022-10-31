@@ -32,9 +32,19 @@
   
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95"><div class="u-clearfix u-sheet u-sheet-1">
+    <div>
+      <b>
+      {% if user.is_authenticated %}
+        מחובר כ- {{ user.username }} <a href={% url 'logout' %}>התנתק</a>
+      {% else %}
+        <a href={% url 'login' %}>התחבר</a> או <a href={% url 'signup' %}>צור חשבון</a>
+      {% endif %}
+    </b>
+    </div>
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
           <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
+
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
           <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
             <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-white" href="#" style="background-image: none;">
@@ -43,11 +53,7 @@
 </g></svg>
             </a>
           </div>
-          {% if user.is_authenticated %}
-          Logeed in {{ user.username }} <a href={% url 'logout' %}>Logout</a>
-        {% else %}
-          Logged Out <a href={% url 'login' %}>Login</a> or <a href={% url 'signup' %}>SignUp</a>
-        {% endif %}
+
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 0px;">עוד</a><div class="u-nav-popup"><ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="manual.html">אופן השימוש</a>
 																																																																																			   
@@ -109,7 +115,6 @@
         <div class="u-align-center u-border-2 u-border-white u-custom-color-3 u-form u-radius-50 u-form-1">
           <form action="//publish.nicepage.com/Form/Process" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-0 u-inner-form" source="email" name="form-1" style="padding: 14px;">
             <div class="u-form-group u-form-select u-label-left u-form-group-1">
-              <label for="select-700a" class="u-label">אזור</label>
               <div class="u-form-select-wrapper">
                 <select id="select-700a" name="area" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-1">
                   <option value="צפון">צפון</option>
@@ -119,9 +124,9 @@
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
+              <label for="select-700a" class="u-label">אזור</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-left u-form-group-2">
-              <label for="select-0447" class="u-label">מטבע לקבלה</label>
               <div class="u-form-select-wrapper">
                 <select id="select-0447" name="currencyGet" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-2">
                   <option value="אירו">אירו</option>
@@ -280,9 +285,9 @@
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
+              <label for="select-0447" class="u-label">מטבע לקבלה</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-left u-form-group-3">
-              <label for="select-3412" class="u-label">מטבע לנתינה</label>
               <div class="u-form-select-wrapper">
                 <select id="select-3412" name="currencyGive" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-3">
                   <option value="אירו">אירו</option>
@@ -441,14 +446,15 @@
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
+              <label for="select-3412" class="u-label">מטבע לנתינה</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-label-left u-form-group-4">
-              <label for="text-abd6" class="u-label">עד סכום</label>
               <input type="text" id="text-abd6" name="toAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-4">
+              <label for="text-abd6" class="u-label">עד סכום</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-label-left u-form-group-5">
-              <label for="text-5a66" class="u-label">מסכום</label>
               <input type="text" id="text-5a66" name="fromAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-5">
+              <label for="text-5a66" class="u-label">מסכום</label>
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>

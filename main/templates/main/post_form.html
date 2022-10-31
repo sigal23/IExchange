@@ -28,7 +28,16 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+    <div>
+      <b>
+      {% if user.is_authenticated %}
+        מחובר כ- {{ user.username }} <a href={% url 'logout' %}>התנתק</a>
+      {% else %}
+        <a href={% url 'login' %}>התחבר</a> או <a href={% url 'signup' %}>צור חשבון</a>
+      {% endif %}
+    </b>
+    </div>
+    <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
           <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
