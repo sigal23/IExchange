@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>PersonalPost</title>
+    <title>personal_post</title>
     <link rel="stylesheet" href="{% static '/main/css/nicepage.css' %}" media="screen">
-<link rel="stylesheet" href="{% static '/main/css/PersonalPost.css' %}" media="screen">
+<link rel="stylesheet" href="{% static '/main/css/personal_post.css' %}" media="screen">
     <script class="u-script" type="text/javascript" src="{% static 'main/js/jquery.js' %}" "="" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static 'main/js/nicepage.js' %}" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.17.7, nicepage.com">
@@ -23,7 +23,7 @@
 		"logo": "images/myLogo.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="PersonalPost">
+    <meta property="og:title" content="personal_post">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
@@ -48,7 +48,7 @@
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="About.html" style="padding: 10px 0px;">אודות</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Contact.html" style="padding: 10px 0px;">צור קשר</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Create-Post.html" style="padding: 10px 0px;">פוסט חדש</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="PersonalPost.html" style="padding: 10px 0px;">הפוסטים שלי</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="personal_post.html" style="padding: 10px 0px;">הפוסטים שלי</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Home.html" style="padding: 10px 0px;">דף הבית</a>
 </li></ul>
           </div>
@@ -64,7 +64,7 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">אודות</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">צור קשר</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Create-Post.html">פוסט חדש</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="PersonalPost.html">הפוסטים שלי</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="personal_post.html">הפוסטים שלי</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">דף הבית</a>
 </li></ul>
               </div>
@@ -82,7 +82,7 @@
         <div class="u-align-center u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             {% for post in posts.all %}
-            <div class="u-border-3 u-border-custom-color-4 u-container-style u-hover-feature u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1">
+            <div class="u-border-3 u-border-custom-color-4 u-container-style u-hover-feature u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1" style="text-align: right;">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
                 <h3> נותן {{ post.amount }} {{ post.cur_to_give }} תמורת {{ post.cur_to_get }} </h3>
                 <h5><ins>שם</ins>: {{ post.name }} </h5>

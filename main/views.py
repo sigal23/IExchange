@@ -15,7 +15,7 @@ def home(request):
 def personal_post(request):
     posts = Post.objects.filter(user=str(request.user))
     context = {'posts': posts}
-    return render(request, 'main/PersonalPost.html', context)
+    return render(request, 'main/personal_post.html', context)
 
 
 def about(request):
