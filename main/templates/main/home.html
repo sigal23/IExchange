@@ -113,7 +113,9 @@
     <section class="u-align-center u-clearfix u-image u-section-1" id="sec-83ab" data-image-width="3936" data-image-height="2624">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-border-2 u-border-white u-custom-color-3 u-form u-radius-50 u-form-1">
-          <form action="//publish.nicepage.com/Form/Process" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-0 u-inner-form" source="email" name="form-1" style="padding: 14px;">
+          <form action="{% url 'home' %}" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-0 u-inner-form" source="custom" name="form-1" style="padding: 14px;">
+            {% csrf_token %}
+            {{ form.as_p }}
             <div class="u-form-group u-form-select u-label-left u-form-group-1">
               <div class="u-form-select-wrapper">
                 <select id="select-700a" name="area" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-1">
@@ -456,16 +458,15 @@
               <input type="text" id="text-5a66" name="fromAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-5">
               <label for="text-5a66" class="u-label">מסכום</label>
             </div>
-            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
-            <input type="hidden" name="formServices" value="421e0687dfb40e5694578a0674b563e7">
+            <div class="u-align-center u-form-group u-form-submit">
+              <a href="#" class="u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-feature u-hover-white u-radius-49 u-white u-btn-1"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 52.966 52.966" x="0px" y="0px" style="width: 1em; height: 1em;"><circle style="fill:#57ABC1;" cx="21.983" cy="21" r="20"></circle><line style="fill:none;stroke:#556080;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="35.437" y1="35.798" x2="50.983" y2="51.966"></line><path style="fill:#7CCBD8;" d="M3.002,27.253c0.848,2.582,2.24,5.018,4.167,7.146L35.382,6.186
+                c-2.129-1.928-4.564-3.319-7.146-4.167L3.002,27.253z"></path><path style="fill:#556080;" d="M21.983,42c-11.58,0-21-9.42-21-21s9.42-21,21-21s21,9.42,21,21S33.562,42,21.983,42z M21.983,2
+                c-10.477,0-19,8.523-19,19s8.523,19,19,19s19-8.523,19-19S32.459,2,21.983,2z"></path></svg><img></span>&nbsp;
+              </a>
+              <input type="submit" value="submit" class="u-form-control-hidden">                  
+            </div>
           </form>
         </div>
-        <a href="https://nicepage.com/css-templates" class="u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-feature u-hover-white u-radius-49 u-white u-btn-1"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 52.966 52.966" x="0px" y="0px" style="width: 1em; height: 1em;"><circle style="fill:#57ABC1;" cx="21.983" cy="21" r="20"></circle><line style="fill:none;stroke:#556080;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="35.437" y1="35.798" x2="50.983" y2="51.966"></line><path style="fill:#7CCBD8;" d="M3.002,27.253c0.848,2.582,2.24,5.018,4.167,7.146L35.382,6.186
-	c-2.129-1.928-4.564-3.319-7.146-4.167L3.002,27.253z"></path><path style="fill:#556080;" d="M21.983,42c-11.58,0-21-9.42-21-21s9.42-21,21-21s21,9.42,21,21S33.562,42,21.983,42z M21.983,2
-	c-10.477,0-19,8.523-19,19s8.523,19,19,19s19-8.523,19-19S32.459,2,21.983,2z"></path></svg><img></span>&nbsp;
-        </a>
         <div class="u-align-center u-list u-list-1">
 			<div class="u-repeater u-repeater-1">
             {% for post in posts.all %}

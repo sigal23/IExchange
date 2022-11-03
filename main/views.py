@@ -1,5 +1,5 @@
 #from ast import main
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model, login, logout, authenticate
@@ -8,7 +8,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import os
 # Create your views here.
 def home(request):
-    posts = Post.objects.all()
+    if request.method == 'POST':
+        currencyGive = request.POST.get('currencyGive')
+        areaPost = request.POST.get('area')
+        currencyGet = request.POST.get('currencyGet')
+        toAmount = request.POST.get('toAmount')
+        fromAmount = request.POST.get('fromAmount')
+        posts = Post.objects.filter(area=areaPost)
+    else:   
+        posts = Post.objects.all()
     context = {'posts': posts}
     return render(request, 'main/home.html', context)
 
