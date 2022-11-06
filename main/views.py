@@ -1,24 +1,62 @@
 #from ast import main
+from pickle import GET
+from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from .models import Post
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import os
+
+
+context = {'posts': Post.objects.all(), 'filters': []}
+
 # Create your views here.
 def home(request):
+    global context
     if request.method == 'POST':
         currencyGive = request.POST.get('currencyGive')
         areaPost = request.POST.get('area')
         currencyGet = request.POST.get('currencyGet')
         toAmount = request.POST.get('toAmount')
         fromAmount = request.POST.get('fromAmount')
-        posts = Post.objects.filter(area=areaPost)
-    else:   
-        posts = Post.objects.all()
-    context = {'posts': posts}
+        filters = Post.objects.filter(area=areaPost)
+        context['filters'] = filters
+        return HttpResponseRedirect('/')
     return render(request, 'main/home.html', context)
+
+# posts=[]
+# flag=0
+
+# # Create your views here.
+# def home(request):
+#     global flag
+#     global posts
+#     if request.method == 'POST':
+#         currencyGive = request.POST.get('currencyGive')
+#         areaPost = request.POST.get('area')
+#         currencyGet = request.POST.get('currencyGet')
+#         toAmount = request.POST.get('toAmount')
+#         fromAmount = request.POST.get('fromAmount')
+#         posts = Post.objects.filter(area=areaPost)
+#         flag=1
+#         print('##### filter posts ##### ' + str(posts))
+#         return HttpResponseRedirect('/')
+#     else:
+#         print(request)
+#         if flag==1:
+#             context = {'posts': posts}
+#             flag=0
+#             print('##### filter context get ##### ' + str(context))
+#             return render(request, 'main/home.html', context)
+#         else:
+#             posts = Post.objects.all()
+#             context = {'posts': []}
+#             print('$$$ all posts $$$ ' + str(posts))
+#             print('$$$ all posts $$$ ' + str(flag))
+#             return render(request, 'main/home.html', context)
 
 def personal_post(request):
     posts = Post.objects.filter(user=str(request.user))
