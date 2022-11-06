@@ -86,18 +86,32 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-border-20 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-container-style u-custom-border u-group u-opacity u-opacity-75 u-radius-46 u-shape-round u-white u-group-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
-            <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">יצירת פוסט</h2>
             <div class="u-align-center u-form u-form-1">
               <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
                 {% csrf_token %}
+
+                {% if form.name.value %}
+                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">עריכת פוסט</h2>
+                {% else %}
+                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">יצירת פוסט</h2>
+                {% endif %}
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="id_name" class="u-label u-spacing-8 u-label-1">שם</label>
+                  {% if form.name.value %}
+                  <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="" value="{{ form.name.value }}">
+                  {% else %}
                   <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="">
+                  {% endif %}
                 </div>
                 <div class="u-form-group u-form-select u-form-group-2">
                   <label for="id_cur_to_get" class="u-label">מטבע לקבלה</label>
                   <div class="u-form-select-wrapper">
                     <select id="id_cur_to_get" name="cur_to_get" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                      {% if form.cur_to_get.value %}
+                      <option>{{ form.cur_to_get.value }}</option>
+                      {% else %}
+                      <option selected disabled hidden style='display: none'></option>
+                      {% endif %}
                       <option value="אירו">אירו</option>
                       <option value="אסקודו כף ורדה">אסקודו כף ורדה</option>
                       <option value="אפגני אפגני">אפגני אפגני</option>
@@ -259,6 +273,11 @@
                   <label for="id_cur_to_give" class="u-label">מטבע לנתינה</label>
                   <div class="u-form-select-wrapper">
                     <select id="id_cur_to_give" name="cur_to_give" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                      {% if form.cur_to_give.value %}
+                      <option>{{ form.cur_to_give.value }}</option>
+                      {% else %}
+                      <option selected disabled hidden style='display: none' ></option>
+                      {% endif %}
                       <option value="אירו">אירו</option>
                       <option value="אסקודו כף ורדה">אסקודו כף ורדה</option>
                       <option value="אפגני אפגני">אפגני אפגני</option>
@@ -418,16 +437,29 @@
                 </div>
                 <div class="u-form-group u-label-top u-form-group-4">
                   <label for="id_amount" class="u-label u-spacing-8 u-label-4">סכום</label>
+                  {% if form.amount.value %}
+                  <input type="number" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus" value="{{ form.amount.value }}">
+                  {% else %}
                   <input type="number" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus">
+                  {% endif %}
                 </div>
                 <div class="u-form-group u-form-phone u-label-top u-form-group-5">
                   <label for="id_phone_number" class="u-label u-spacing-8 u-label-5">טלפון</label>
+                  {% if form.phone_number.value %}
+                  <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$" value="{{ form.phone_number.value }}">
+                  {% else %}
                   <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$">
+                  {% endif %}
                 </div>
                 <div class="u-form-group u-form-select u-form-group-6">
                   <label for="id_area" class="u-label">אזור</label>
                   <div class="u-form-select-wrapper">
                     <select id="id_area" name="area" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                      {% if form.area.value %}
+                      <option>{{ form.area.value }}</option>
+                      {% else %}
+                      <option selected disabled hidden style='display: none' ></option>
+                      {% endif %}
                       <option value="צפון">צפון</option>
                       <option value="מרכז">מרכז</option>
                       <option value="ירושלים והסביבה">ירושלים והסביבה</option>
@@ -438,14 +470,26 @@
                 </div>
                 <div class="u-form-group u-label-top u-form-group-7">
                   <label for="id_city" class="u-label u-spacing-8 u-label-7">עיר</label>
+                  {% if form.city.value %}
+                  <input type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" value="{{ form.city.value }}">
+                  {% else %}
                   <input type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7">
+                  {% endif %}
                 </div>
                 <div class="u-form-group u-form-textarea u-form-group-8">
                   <label for="id_comment" class="u-label">הערות</label>
+                  {% if form.comment.value %}
+                  <textarea rows="4" cols="50" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">{{ form.comment.value }}</textarea>
+                  {% else %}
                   <textarea rows="4" cols="50" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
+                  {% endif %}
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
+                  {% if form.name.value %}
+                  <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1">עדכן<span style="font-weight: 700;"></span></a>
+                  {% else %}
                   <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1">פרסם<span style="font-weight: 700;"></span></a>
+                  {% endif %}
                   <input type="submit" value="submit" class="u-form-control-hidden">                  
                 </div>
               </form>

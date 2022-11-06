@@ -98,12 +98,14 @@
                 <h5><ins>טלפון</ins>: {{ post.phone_number }}</h5>
                 <h5><ins>איזור</ins>: {{ post.area }}</h5>
                 <h5><ins>עיר</ins>: {{ post.city }}</h5>
+                {% if post.comment %}
                 <p><ins>הערות</ins>: {{ post.comment }}</p>
+                {% endif %}
                 <p><ins>תאריך</ins>: 28/10/22</p>
                 
                 <a href="https://nicepage.com/joomla-page-builder" class="u-border-hover-palette-2-base u-border-none u-btn u-button-style u-none u-btn-1"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-1"><img src="{% static 'main/images/delete.png' %}" alt=""></span>
                 </a>
-                <a href="https://nicepage.com/k/blank-html-templates" class="u-border-hover-palette-3-base u-border-none u-btn u-button-style u-none u-text-palette-1-base u-btn-2"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-2"><img src="{% static 'main/images/edit.png' %}" alt=""></span>
+                <a href={% url 'update_post' post.pk %} class="u-border-hover-palette-3-base u-border-none u-btn u-button-style u-none u-text-palette-1-base u-btn-2"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-2"><img src="{% static 'main/images/edit.png' %}" alt=""></span>
                 </a>
               </div>
             </div>

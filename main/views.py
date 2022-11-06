@@ -106,3 +106,13 @@ class MainCreatePost(LoginRequiredMixin, CreateView):
         # need to add verification to fields.
         obj.save()
         return super().form_valid(form)
+
+class MainUpdatePost(LoginRequiredMixin, UpdateView):
+    model=Post
+    fields=['name', 'phone_number', 'cur_to_get', 'cur_to_give', 'amount', 'area', 'city', 'comment']
+
+    def get_object(self):
+        post = super(MainUpdatePost, self).get_object()
+        #if not todo.user == self.request.user:
+        #    raise Http404('You dontt have permission to do this. go away you hacker')
+        return post
