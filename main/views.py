@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model, login, logout, authenticate
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import os
-
+from django.urls import reverse_lazy
 
 context = {'posts': Post.objects.all(), 'filters': []}
 
@@ -113,6 +113,16 @@ class MainUpdatePost(LoginRequiredMixin, UpdateView):
 
     def get_object(self):
         post = super(MainUpdatePost, self).get_object()
+        #if not todo.user == self.request.user:
+        #    raise Http404('You dontt have permission to do this. go away you hacker')
+        return post
+
+class MainDeletePost(LoginRequiredMixin, DeleteView):
+    model=Post
+    success_url = reverse_lazy('personal_post')
+
+    def get_object(self):
+        post = super(MainDeletePost, self).get_object()
         #if not todo.user == self.request.user:
         #    raise Http404('You dontt have permission to do this. go away you hacker')
         return post

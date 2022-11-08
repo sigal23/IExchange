@@ -1,0 +1,15 @@
+<div class="popup-wrapper">
+<form method="post">
+{% csrf_token %}
+<input type="hidden" name="program" value={{ program.pk }} >
+<p>Are you sure you want to delete the Todo: "{{ todo }}"?</p>
+<input type="submit" value="Confirm">
+
+
+<a href={% url 'personal_post' %}>
+    <button onclick="window.history.back();" class="btn btn-danger" type="button">Cancel</button>
+</a>
+        
+
+</form>
+</div>
