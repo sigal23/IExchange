@@ -30,7 +30,7 @@
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
-          <img src="images/myLogo.png" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
           <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
@@ -76,28 +76,23 @@
       </div></header>
       
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="509" data-image-height="339" id="sec-32d3">
-      
+      <div class="u-align-center u-clearfix u-sheet u-sheet-1">
         <form method="post">
-            {% csrf_token %}
-            <input type="hidden" name="program" value={{ program.pk }} >
-      
-        <div class="u-align-center u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">האם אתה בטוח שברצונך למחוק?</h2>
-        
-
-        <input type="submit" class="u-btn u-btn-round u-button-style u-hover-palette-2-dark-1 u-palette-2-base u-radius-14 u-btn-1" value="מחק">
-        <a href={% url 'personal_post' %}>
+        {% csrf_token %}
+          <input type="hidden" name="program" value={{ program.pk }} >      
+          <h2 class="u-text u-text-default u-text-1">האם אתה בטוח שברצונך למחוק?</h2>
+          <input type="submit" class="u-btn u-btn-round u-button-style u-hover-palette-2-dark-1 u-palette-2-base u-radius-14 u-btn-1" value="מחק">
+          <a href={% url 'personal_post' %}>
             <button onclick="window.history.back();" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-14 u-btn-2" type="button">בטל</button>
-        </a>      
-    
-    </div>
-</form>
+          </a>              
+        </form>
+      </div>
     </section>
     
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
-          <img src="images/myLogo.png" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">פרויקט גמר החוג למערכות מידע אוניברסיטת חיפה</p>
       </div></footer>
