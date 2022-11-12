@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import os
 from django.urls import reverse_lazy
 from django.utils.timezone import now
-
+from datetime import date
 context = {'posts': Post.objects.all(), 'filters': []}
 
 # Create your views here.
@@ -104,6 +104,9 @@ class MainCreatePost(LoginRequiredMixin, CreateView):
         #form.instance.user = self.request.user
         obj=form.save(commit=False)
         obj.user = str(self.request.user)
+        today = date.today()
+        today = today.strftime("%d/%m/%Y")
+        obj.created_date = str(today)
         # need to add verification to fields.
         obj.save()
         return super().form_valid(form)

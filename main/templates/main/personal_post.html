@@ -101,7 +101,7 @@
                 {% if post.comment %}
                 <p><ins>הערות</ins>: {{ post.comment }}</p>
                 {% endif %}
-                <p><ins>תאריך</ins>: 28/10/22</p>
+                <p><ins>תאריך</ins>: {{ post.created_date }}</p>
                 <a href={% url 'delete_post' post.pk %} class="u-border-hover-palette-2-base u-border-none u-btn u-button-style u-none u-btn-1"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-1"><img src="{% static 'main/images/delete.png' %}" alt=""></span>
                 </a>
                 <a href={% url 'update_post' post.pk %} class="u-border-hover-palette-3-base u-border-none u-btn u-button-style u-none u-text-palette-1-base u-btn-2"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-2"><img src="{% static 'main/images/edit.png' %}" alt=""></span>
