@@ -1,16 +1,21 @@
 <!DOCTYPE html>
+
+{% load static %}
+
+
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>About</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="About.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
+    <link rel="stylesheet" href="{% static '/main/css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static '/main/css/about.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'main/js/jquery.js' %}" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'main/js/nicepage.js' %}" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.17.7, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -24,8 +29,17 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95"><div class="u-clearfix u-sheet u-sheet-1">
+    <div>
+      <b>
+      {% if user.is_authenticated %}
+        מחובר כ- {{ user.username }} <a href={% url 'logout' %}>התנתק</a>
+      {% else %}
+        <a href={% url 'login' %}>התחבר</a> או <a href={% url 'signup' %}>צור חשבון</a>
+      {% endif %}
+    </b>
+    </div>
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
-          <img src="images/myLogo.png" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
           <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
@@ -68,12 +82,40 @@
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-      </div></header> 
+      </div></header>
+    <section class="u-clearfix u-gradient u-section-1" id="carousel_398b">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-left u-container-style u-group u-radius-20 u-shape-round u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-text u-text-black u-text-1" dir="rtl">מי אנחנו?</h2>
+            <p class="u-text u-text-black u-text-2" dir="rtl" style="text-align: right;"><b>עדי אור וסיגל רחמימוב סטודנטיות בחוג למערכות מידע באוניברסיטת חיפה, במסגרת הפרויקט הסופי שלנו הקמנו את האתר IExchange.<span style="font-weight: 400;"></span></b>
+              <br><i></i>
+            </p>
+          </div>
+        </div>
+        <div class="u-align-left u-container-style u-group u-radius-20 u-shape-round u-white u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <h2 class="u-text u-text-black u-text-3" dir="rtl"><i></i><b>מה זה IExchange?</b>
+            </h2>
+            <p class="u-text u-text-4" dir="rtl" style="text-align: right;"><b>IExchange מהווה פלטפורמה לקישור בין אנשים לצורך המרת מטבע חוץ.<br>מסחר במטבע חוץ נעשה בעיקר על ידי בנקים וגופים רשמיים אחרים ובדרך כלל נעשה באמצעות החלפת מטבע של מדינה אחת בזה של אחרת. האתר מיועד לציבור הרחב המעוניין להשתמש בשירותיו לצורך קנייה ו/או מכירה של מטבע חוץ. האתר מאפשר לקשר בין אנשים המעוניינים לבצע המרת מטבע חוץ ללא עמלות קנייה/מכירה.</b>
+            </p>
+            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{% static 'main/images/change.png' %}" alt="" data-image-width="512" data-image-height="512">
+          </div>
+        </div>
+        <div class="u-container-style u-group u-radius-20 u-shape-round u-white u-group-3">
+          <div class="u-container-layout u-container-layout-3">
+            <h2 class="u-align-center u-text u-text-black u-text-5" dir="rtl"> אז איך זה עובד?</h2>
+            <p class="u-align-left u-text u-text-6" dir="rtl" style="text-align: right;"><i></i><b> אדם שמעוניין להמיר מטבע חוץ מפרסם פוסט באתר, באמצעות פוסט זה יוכלו ליצור איתו קשר אנשים המעוניינים בהמרה זו. במידה ונמצאה התאמה השניים יתאמו ביניהם ויבצעו את ההמרה לפי השער היציג של המטבע. </b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
-          <img src="images/myLogo.png" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">פרויקט גמר החוג למערכות מידע אוניברסיטת חיפה</p>
       </div></footer>
