@@ -10,6 +10,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import os
 from django.urls import reverse_lazy
+from django.utils.timezone import now
 
 context = {'posts': Post.objects.all(), 'filters': []}
 

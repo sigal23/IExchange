@@ -5,6 +5,7 @@ from django.shortcuts import reverse
 from django.shortcuts import redirect
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.utils.timezone import now
 #from model_utils import Choices
 
 
@@ -27,6 +28,7 @@ class Post(models.Model):
     area =  models.CharField(blank=True, max_length=100)
     city = models.TextField(max_length=40)
     comment = models.TextField(default=None, blank=True, null=True, max_length=200)
+    created_date = models.DateTimeField(default=now, editable=False)
 
     def __str__(self):
         return self.name
