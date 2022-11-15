@@ -12,10 +12,29 @@ import os
 from django.urls import reverse_lazy
 from django.utils.timezone import now
 from datetime import date
+
+# # Create your views here.
+# def home(request):
+#     global context
+#     if request.method == 'POST':
+#         currencyGive = request.POST.get('currencyGive')
+#         areaPost = request.POST.get('area')
+#         currencyGet = request.POST.get('currencyGet')
+#         toAmount = request.POST.get('toAmount')
+#         fromAmount = request.POST.get('fromAmount')
+#         filters = Post.objects.filter(area=areaPost)
+#         context['filters'] = filters
+#         return HttpResponseRedirect('/')
+#     return render(request, 'main/home.html', context)
+
 context = {'posts': Post.objects.all(), 'filters': []}
+filters=[]
+flag=0
 
 # Create your views here.
 def home(request):
+    global flag
+    global filters
     global context
     if request.method == 'POST':
         currencyGive = request.POST.get('currencyGive')
@@ -24,40 +43,22 @@ def home(request):
         toAmount = request.POST.get('toAmount')
         fromAmount = request.POST.get('fromAmount')
         filters = Post.objects.filter(area=areaPost)
-        context['filters'] = filters
-        return HttpResponseRedirect('/')
+        print("^^  POST: ^^" + str(filters))
+        if not filters:
+            filters = [""]
+        flag=1
+    else:
+        print(flag)
+        if flag==1:
+            print("##  SHOW FILTER: ##" + str(filters))
+            context['filters'] = filters
+            flag=0
+        else:
+            context['filters'] = []
+            filters=[]
+            print("&&  SHOW ALL: &&" + str(filters))
     return render(request, 'main/home.html', context)
 
-# posts=[]
-# flag=0
-
-# # Create your views here.
-# def home(request):
-#     global flag
-#     global posts
-#     if request.method == 'POST':
-#         currencyGive = request.POST.get('currencyGive')
-#         areaPost = request.POST.get('area')
-#         currencyGet = request.POST.get('currencyGet')
-#         toAmount = request.POST.get('toAmount')
-#         fromAmount = request.POST.get('fromAmount')
-#         posts = Post.objects.filter(area=areaPost)
-#         flag=1
-#         print('##### filter posts ##### ' + str(posts))
-#         return HttpResponseRedirect('/')
-#     else:
-#         print(request)
-#         if flag==1:
-#             context = {'posts': posts}
-#             flag=0
-#             print('##### filter context get ##### ' + str(context))
-#             return render(request, 'main/home.html', context)
-#         else:
-#             posts = Post.objects.all()
-#             context = {'posts': []}
-#             print('$$$ all posts $$$ ' + str(posts))
-#             print('$$$ all posts $$$ ' + str(flag))
-#             return render(request, 'main/home.html', context)
 
 def personal_post(request):
     posts = Post.objects.filter(user=str(request.user))
