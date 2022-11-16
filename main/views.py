@@ -38,11 +38,23 @@ def home(request):
     global context
     if request.method == 'POST':
         currencyGive = request.POST.get('currencyGive')
-        areaPost = request.POST.get('area')
+        if currencyGive is None:
+            currencyGive = '__all__'
+        areaPost = [request.POST.get('area')]
+        if areaPost == [None]:
+            areaPost = ['צפון','דרום','ירושלים והסביבה','מרכז']
         currencyGet = request.POST.get('currencyGet')
+        if currencyGet is None:
+            currencyGet = '__all__'
         toAmount = request.POST.get('toAmount')
+        if toAmount == '':
+            toAmount=1000000
+        print(toAmount)
         fromAmount = request.POST.get('fromAmount')
-        filters = Post.objects.filter(area=areaPost)
+        if fromAmount == '':
+            fromAmount=1
+        filters = Post.objects.filter(area__in=areaPost, cur_to_give=currencyGet,
+        cur_to_get=currencyGive,amount__lte=toAmount, amount__gte=fromAmount)
         print("^^  POST: ^^" + str(filters))
         if not filters:
             filters = [""]
