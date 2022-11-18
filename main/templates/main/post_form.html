@@ -113,17 +113,17 @@
                 {% else %}
                 <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">יצירת פוסט</h2>
                 {% endif %}
-                <div class="u-form-group u-form-name u-label-top">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name u-label-top">
                   <label for="id_name" class="u-label u-spacing-8 u-label-1">שם</label>
                   {% if form.name.value %}
-                  <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="" value="{{ form.name.value }}">
+                  <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="" value="{{ form.name.value }}">
                   {% else %}
-                  <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="">
+                  <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="">
                   {% endif %}
                 </div>
-                <div class="u-form-group u-form-select u-form-group-2">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-2">
                   <label for="id_cur_to_get" class="u-label">מטבע לקבלה</label>
-                  <div class="u-form-select-wrapper">
+                  <div>
                     <select id="id_cur_to_get" name="cur_to_get" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
                       {% if form.cur_to_get.value %}
                       <option>{{ form.cur_to_get.value }}</option>
@@ -284,12 +284,11 @@
                       <option value="שילינג קנייאתי">שילינג קנייאתי</option>
                       <option value="שקל חדש">שקל חדש</option>
                     </select>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                   </div>
                 </div>
-                <div class="u-form-group u-form-select u-form-group-3">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-3">
                   <label for="id_cur_to_give" class="u-label">מטבע לנתינה</label>
-                  <div class="u-form-select-wrapper">
+                  <div>
                     <select id="id_cur_to_give" name="cur_to_give" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
                       {% if form.cur_to_give.value %}
                       <option>{{ form.cur_to_give.value }}</option>
@@ -450,10 +449,9 @@
                       <option value="שילינג קנייאתי">שילינג קנייאתי</option>
                       <option value="שקל חדש">שקל חדש</option>
                     </select>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                   </div>
                 </div>
-                <div class="u-form-group u-label-top u-form-group-4">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-label-top u-form-group-4">
                   <label for="id_amount" class="u-label u-spacing-8 u-label-4">סכום</label>
                   {% if form.amount.value %}
                   <input type="number" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus" value="{{ form.amount.value }}">
@@ -461,7 +459,7 @@
                   <input type="number" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus">
                   {% endif %}
                 </div>
-                <div class="u-form-group u-form-phone u-label-top u-form-group-5">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-phone u-label-top u-form-group-5">
                   <label for="id_phone_number" class="u-label u-spacing-8 u-label-5">טלפון</label>
                   {% if form.phone_number.value %}
                   <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$" value="{{ form.phone_number.value }}">
@@ -469,9 +467,9 @@
                   <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$">
                   {% endif %}
                 </div>
-                <div class="u-form-group u-form-select u-form-group-6">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-6">
                   <label for="id_area" class="u-label">אזור</label>
-                  <div class="u-form-select-wrapper">
+                  <div>
                     <select id="id_area" name="area" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
                       {% if form.area.value %}
                       <option>{{ form.area.value }}</option>
@@ -483,10 +481,9 @@
                       <option value="ירושלים והסביבה">ירושלים והסביבה</option>
                       <option value="דרום">דרום</option>
                     </select>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                   </div>
                 </div>
-                <div class="u-form-group u-label-top u-form-group-7">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-label-top u-form-group-7">
                   <label for="id_city" class="u-label u-spacing-8 u-label-7">עיר</label>
                   {% if form.city.value %}
                   <input type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" value="{{ form.city.value }}">
@@ -494,7 +491,7 @@
                   <input type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7">
                   {% endif %}
                 </div>
-                <div class="u-form-group u-form-textarea u-form-group-8">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-textarea u-form-group-8">
                   <label for="id_comment" class="u-label">הערות</label>
                   {% if form.comment.value %}
                   <textarea rows="4" cols="50" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">{{ form.comment.value }}</textarea>

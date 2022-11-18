@@ -83,17 +83,17 @@
               <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
                 {% csrf_token %}
                 
-                <div class="u-form-email u-form-group">
-                  <label for="id_username" class="u-label">אימייל</label>
-                  <input type="text" name="username" autocapitalize="none" placeholder="Enter a valid email address" id="id_username" autofocus="" required="" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                <div dir="rtl" style="text-align: right;" class="u-form-email u-form-group">
+                  <label for="id_username" class="u-label">שם משתמש</label>
+                  <input type="text" name="username" autocapitalize="none" id="id_username" autofocus="" required="" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                 </div>
-                <div class="u-form-group u-form-group-2">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-group-2">
                   <label for="id_password1" class="u-label">סיסמה</label>
-                  <input type="password" placeholder="Enter a valid password" id="id_password1" name="password1" autocomplete="new-password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <input type="password" id="id_password1" name="password1" autocomplete="new-password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                 </div>
-                <div class="u-form-group u-form-group-3">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-group-3">
                   <label for="id_password2" class="u-label">אימות סיסמה</label>
-                  <input type="password" placeholder="Enter your password again" id="id_password2" name="password2" autocomplete="new-password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <input type="password" id="id_password2" name="password2" autocomplete="new-password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
                   <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1">צור חשבון<br>

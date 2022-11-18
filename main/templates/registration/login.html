@@ -86,11 +86,11 @@
             {% endif %}
               <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
                 {% csrf_token %}
-                <div class="u-form-group u-form-name">
-                  <label for="id_username" class="u-label u-text-grey-25 u-label-1">אימייל</label>
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name">
+                  <label for="id_username" class="u-label u-text-grey-25 u-label-1">שם משתמש</label>
                   <input type="text" name="username" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-input-1" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
                 </div>
-                <div class="u-form-group u-form-password">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-password">
                   <label for="id_password" class="u-label u-text-grey-25 u-label-2">סיסמה</label>
                   <input type="password" name="password" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-input-2"  required="" id="id_password">
                 </div>
