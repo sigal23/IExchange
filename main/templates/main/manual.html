@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>manual</title>
+    <link rel="stylesheet" href="{% static '/main/css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static '/main/css/manual.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'main/js/jquery.js' %}" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'main/js/nicepage.js' %}" "="" defer=""></script>
+    <meta name="generator" content="Nicepage 4.17.7, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "IExchange",
+		"logo": "images/myLogo.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="manual">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en">
+    <header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div><b>
+        {% if user.is_authenticated %}
+          מחובר כ- {{ user.username }} <a href={% url 'logout' %}>התנתק</a>
+        {% else %}
+          <a href={% url 'login' %}>התחבר</a> או <a href={% url 'signup' %}>צור חשבון</a>
+        {% endif %}
+      </b></div>
+    <a href="" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+      <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
+    </a>
+
+    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
+      <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+        <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-white" href="#" style="background-image: none;">
+          <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
+        </a>
+      </div>
+
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 0px;">עוד</a>
+          <div class="u-nav-popup">
+            <ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
+              <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href={% url 'manual' %}>אופן השימוש</a></li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="precaution.html">אמצעי זהירות</a></li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Questions-Answers.html">שאלות ותשובות</a></li>
+            </ul>
+          </div>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'about' %} style="padding: 10px 0px;">אודות</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Contact.html" style="padding: 10px 0px;">צור קשר</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'create_post' %} style="padding: 10px 0px;">פוסט חדש</a>
+          {% if user.is_authenticated %}
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'personal_post' %} style="padding: 10px 0px;">הפוסטים שלי</a>
+          {% else %}
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'login' %} style="padding: 10px 0px;">הפוסטים שלי</a>
+          {% endif %}
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'home' %} style="padding: 10px 0px;">דף הבית</a></li>
+        </ul>																																																																																																																																																												 		  
+      </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav u-white">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link">עוד</a>
+                    <div class="u-nav-popup">
+                      <ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="manual.html">אופן השימוש</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="precaution.html">אמצעי זהירות</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Questions-Answers.html">שאלות ותשובות</a></li>
+                      </ul>
+                    </div>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">אודות</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">צור קשר</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Create-Post.html">פוסט חדש</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="personal_post.html">הפוסטים שלי</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">דף הבית</a></li>
+                  </ul>
+                </div>
+              </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70">
+          </div>
+        </div>
+      </nav>
+		</div>
+  </header>
+
+  
+    <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_9796">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-center u-container-style u-custom-color-4 u-custom-item u-list-item u-opacity u-opacity-60 u-repeater-item u-list-item-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <p class="u-text u-text-1"><span class="u-icon"></span>5
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-2"><img src="{% static 'main/images/2356572.png' %}" alt=""></span>
+                <p class="u-text u-text-2"><b>במקביל ניתן לחפש פוסטים של אנשים אחרים המתאימים לצורך שלכם</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-palette-1-light-1 u-repeater-item u-list-item-2">
+              <div class="u-container-layout u-similar-container u-container-layout-2">
+                <p class="u-text u-text-3"><span class="u-icon"></span>4
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-4"><img src="{% static 'main/images/66163.png' %}" alt=""></span>
+                <p class="u-text u-text-4"><b>מחכים ליצירת קשר מאדם אחר המתעניין בהמרה שפרסמתם</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-85 u-palette-1-light-1 u-repeater-item u-list-item-3">
+              <div class="u-container-layout u-similar-container u-container-layout-3">
+                <p class="u-text u-text-5"><span class="u-icon"></span>3
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-6"><img src="{% static 'main/images/4712540.png' %}" alt=""></span>
+                <p class="u-text u-text-6"><b>מפרסמים פוסט חדש עם כל הפרטים הדרושים</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-75 u-palette-1-light-1 u-repeater-item u-list-item-4">
+              <div class="u-container-layout u-similar-container u-container-layout-4">
+                <p class="u-text u-text-7"><span class="u-icon"></span>2
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-8"><img src="{% static 'main/images/2721688.png' %}" alt=""></span>
+                <p class="u-text u-text-8"><b>נכנסים לאתר ואז נרשמים/מתחברים</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-55 u-palette-1-light-1 u-repeater-item u-list-item-5">
+              <div class="u-container-layout u-similar-container u-container-layout-5">
+                <p class="u-text u-text-9"><span class="u-icon"></span>1
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-10"><img src="{% static 'main/images/3131560.png' %}" alt=""></span>
+                <p class="u-text u-text-10"><span class="u-icon"></span>&nbsp; <b>אתם מעוניינים להמיר מטבע</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-95 u-palette-1-dark-3 u-repeater-item u-list-item-6">
+              <div class="u-container-layout u-similar-container u-container-layout-6">
+                <p class="u-text u-text-11"><span class="u-icon"></span>10
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-13"><img src="{% static 'main/images/3286176.png' %}" alt=""></span>
+                <p class="u-text u-text-12"><b>בסיום התהליך אל תשכחו למחוק את הפוסט שפירסמתם על מנת למנוע פנויות עתידיות שאינן רלוונטיות</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-palette-1-dark-2 u-repeater-item u-list-item-7">
+              <div class="u-container-layout u-similar-container u-container-layout-7">
+                <p class="u-text u-text-13"><span class="u-icon"></span>9
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-15"><img src="{% static 'main/images/4199629.png' %}" alt=""></span>
+                <p class="u-text u-text-14"><b>את ההמרה תבצעו לפי השער היציג של המטבעות נכון לאותו היום, ללא עמלות כלל&nbsp;</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-85 u-palette-1-dark-2 u-repeater-item u-list-item-8">
+              <div class="u-container-layout u-similar-container u-container-layout-8">
+                <p class="u-text u-text-15"><span class="u-icon"></span>8
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-17"><img src="{% static 'main/images/5155245.png' %}" alt=""></span>
+                <p class="u-text u-text-16"><b>יש להגיע במועד למקום שנקבע עם הכסף להמרה</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-palette-1-dark-1 u-repeater-item u-list-item-9">
+              <div class="u-container-layout u-similar-container u-container-layout-9">
+                <p class="u-text u-text-17"><span class="u-icon"></span>7
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-19"><img src="{% static 'main/images/3272357.png' %}" alt=""></span>
+                <p class="u-text u-text-18"><b>שימו לב לאמצעי הזהירות בלשונית מעלה</b>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-85 u-palette-1-dark-1 u-repeater-item u-list-item-10">
+              <div class="u-container-layout u-similar-container u-container-layout-10">
+                <p class="u-text u-text-19"><span class="u-icon"></span>6
+                </p><span class="u-border-2 u-border-grey-75 u-file-icon u-icon u-icon-circle u-white u-icon-21"><img src="{% static 'main/images/1691986.png' %}" alt=""></span>
+                <p class="u-text u-text-20"><b>במידה ומצאתם אדם המעוניין בהמרה תוכלו לקבוע איתו מועד ומקום לביצוע ההמרה&nbsp;</b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+          <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">פרויקט גמר החוג למערכות מידע אוניברסיטת חיפה</p>
+      </div></footer>
+  
+</body></html>

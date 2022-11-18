@@ -84,6 +84,12 @@ def personal_post(request):
 def about(request):
     return render(request, 'main/about.html')
 
+def manual(request):
+    return render(request, 'main/manual.html')
+
+def precaution(request):
+    return render(request, 'main/precaution.html')
+
 def post_list(request):
     posts = Post.objects.all()
     context = {'posts': posts}
