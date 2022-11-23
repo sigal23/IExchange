@@ -99,6 +99,8 @@
   transition-duration: 0.5s;
   background-image: none;
   margin: 0 auto;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 @media (max-width: 1199px) {

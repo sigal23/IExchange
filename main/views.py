@@ -27,7 +27,7 @@ from datetime import date
 #         return HttpResponseRedirect('/')
 #     return render(request, 'main/home.html', context)
 
-context = {'posts': Post.objects.all(), 'filters': []}
+context = {'posts': Post.objects.all().order_by('name').values(), 'filters': []}
 filters=[]
 flag=0
 
@@ -57,7 +57,7 @@ def home(request):
         if fromAmount == '':
             fromAmount=1
         filters = Post.objects.filter(area__in=areaPost, cur_to_give__in=currencyGet,
-        cur_to_get__in=currencyGive,amount__lte=toAmount, amount__gte=fromAmount)
+        cur_to_get__in=currencyGive,amount__lte=toAmount, amount__gte=fromAmount).order_by('name').values()
         print("^^  POST: ^^" + str(filters))
         if not filters:
             filters = [""]
