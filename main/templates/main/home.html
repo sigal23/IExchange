@@ -117,7 +117,7 @@
             <label for="select-700a" class="u-label"> </label>
             </div>
             <div class="u-form-group u-form-select u-label-left u-form-group-1">
-              <div class="u-form-select-wrapper">
+              <div>
                 <select style="width:150px;" id="select-700a" name="area" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-1">
                   <option selected disabled hidden style='display: none'></option>
                   <option value="צפון">צפון</option>
@@ -125,13 +125,12 @@
                   <option value="ירושלים והסביבה">ירושלים והסביבה</option>
                   <option value="דרום">דרום</option>
                 </select>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
               <label for="select-700a" class="u-label">אזור</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-left u-form-group-2">
-              <div class="u-form-select-wrapper">
-                <select style="width:120px;" id="select-0447" name="currencyGet" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-2">
+              <div>
+                <select style="width:170px;" id="select-0447" name="currencyGet" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-2">
                   <option selected disabled hidden style='display: none'></option>
                   <option value="אירו">אירו</option>
                   <option value="אסקודו כף ורדה">אסקודו כף ורדה</option>
@@ -287,13 +286,12 @@
                   <option value="שילינג קנייאתי">שילינג קנייאתי</option>
                   <option value="שקל חדש">שקל חדש</option>
                 </select>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
               <label for="select-0447" class="u-label">מטבע לקבלה</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-left u-form-group-3">
-              <div class="u-form-select-wrapper">
-                <select style="width:120px;" id="select-3412" name="currencyGive" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-3">
+              <div>
+                <select style="width:170px;" id="select-3412" name="currencyGive" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-3">
                   <option selected disabled hidden style='display: none'></option>
                   <option value="אירו">אירו</option>
                   <option value="אסקודו כף ורדה">אסקודו כף ורדה</option>
@@ -449,16 +447,15 @@
                   <option value="שילינג קנייאתי">שילינג קנייאתי</option>
                   <option value="שקל חדש">שקל חדש</option>
                 </select>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
               <label for="select-3412" class="u-label">מטבע לנתינה</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-label-left u-form-group-4">
-              <input type="text" id="text-abd6" name="toAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-4">
+              <input style="width:70px;" type="text" id="text-abd6" name="toAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-4">
               <label for="text-abd6" class="u-label">עד סכום</label>
             </div>
             <div class="u-form-group u-form-partition-factor-2 u-label-left u-form-group-5">
-              <input type="text" id="text-5a66" name="fromAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-5">
+              <input style="width:70px;" type="text" id="text-5a66" name="fromAmount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-5">
               <label for="text-5a66" class="u-label">מסכום</label>
             </div>
           </form>
@@ -470,14 +467,23 @@
               <div class="u-align-center u-border-3 u-border-custom-color-4 u-container-style u-hover-feature u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1" style="text-align: right;">
                 <div class="u-container-layout u-similar-container u-container-layout-1">
                   <h3> נותן {{ post.amount }} {{ post.cur_to_give }} תמורת {{ post.cur_to_get }} </h3>
-                  <h5><ins>שם</ins>: {{ post.name }} </h5>
-                  <h5><ins>טלפון</ins>: {{ post.phone_number }}</h5>
-                  <h5><ins>איזור</ins>: {{ post.area }}</h5>
-                  <h5><ins>עיר</ins>: {{ post.city }}</h5>
-                  {% if post.comment %}
-                  <p><ins>הערות</ins>: {{ post.comment }}</p>
-                  {% endif %}
-                  <p><ins>תאריך</ins>: {{ post.created_date }}</p>																																																	  																								 
+                  <div style="width: 100%; display: table;">
+                    <div style="display: table-row; height: 100px;">
+                        <div style="width: 50%; display: table-cell;">
+                          <h5><ins>עיר</ins>: {{ post.city }}</h5>
+                          {% if post.comment %}
+                          <h5><ins>הערות</ins>: {{ post.comment }}<h5>
+                          {% endif %}
+                          <h5><ins>תאריך</ins>: {{ post.created_date }}<h5> 
+                        </div>
+                        <div style="display: table-cell;;"> 
+                          <h5><ins>שם</ins>: {{ post.name }} </h5>
+                          <h5><ins>טלפון</ins>: {{ post.phone_number }}</h5>
+                          <h5><ins>איזור</ins>: {{ post.area }}</h5>
+                        </div>
+                    </div>
+                </div>
+                                                                                                                                                       
               </div>
             </div>
             {% endfor %}
@@ -486,14 +492,23 @@
             <div class="u-align-center u-border-3 u-border-custom-color-4 u-container-style u-hover-feature u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1" style="text-align: right;">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <h3> נותן {{ post.amount }} {{ post.cur_to_give }} תמורת {{ post.cur_to_get }} </h3>
-                <h5><ins>שם</ins>: {{ post.name }} </h5>
-                <h5><ins>טלפון</ins>: {{ post.phone_number }}</h5>
-                <h5><ins>איזור</ins>: {{ post.area }}</h5>
-                <h5><ins>עיר</ins>: {{ post.city }}</h5>
-                {% if post.comment %}
-                <p><ins>הערות</ins>: {{ post.comment }}</p>
-                {% endif %}
-                <p><ins>תאריך</ins>: {{ post.created_date }}</p>																																																	  																								 
+                <div style="width: 100%; display: table;">
+                  <div style="display: table-row; height: 100px;">
+                      <div style="width: 50%; display: table-cell;">
+                        <h5><ins>עיר</ins>: {{ post.city }}</h5>
+                        {% if post.comment %}
+                        <h5><ins>הערות</ins>: {{ post.comment }}<h5>
+                        {% endif %}
+                        <h5><ins>תאריך</ins>: {{ post.created_date }}<h5> 
+                      </div>
+                      <div style="display: table-cell;;"> 
+                        <h5><ins>שם</ins>: {{ post.name }} </h5>
+                        <h5><ins>טלפון</ins>: {{ post.phone_number }}</h5>
+                        <h5><ins>איזור</ins>: {{ post.area }}</h5>
+                      </div>
+                  </div>
+              </div>
+																																																	  																								 
              </div>
            </div>
             {% endfor %}

@@ -73,9 +73,9 @@
 
 .u-section-1 .u-repeater-1 {
   min-height: 552px;
-  grid-template-columns: calc(50% - 12.5px) calc(50% - 12.5px);
+  grid-template-columns: 100%;
   grid-gap: 25px 25px;
-  grid-auto-columns: calc(50% - 12.5px);
+  grid-auto-columns: 100%;
 }
 
 .u-section-1 .u-list-item-1 {
@@ -173,7 +173,6 @@
   }
 
   .u-section-1 .u-repeater-1 {
-    grid-template-columns: 100%;
     grid-auto-columns: calc(100% - 0px);
   }
 }
