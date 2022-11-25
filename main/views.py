@@ -1,37 +1,22 @@
 #from ast import main
 from pickle import GET
 from django.http import HttpRequest, HttpResponseRedirect
-from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.shortcuts import render
 from .models import Post
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import get_user_model, login, logout, authenticate
+from django.contrib.auth import get_user_model, login, authenticate
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import os
 from django.urls import reverse_lazy
-from django.utils.timezone import now
 from datetime import date
+import datetime
 
-# # Create your views here.
-# def home(request):
-#     global context
-#     if request.method == 'POST':
-#         currencyGive = request.POST.get('currencyGive')
-#         areaPost = request.POST.get('area')
-#         currencyGet = request.POST.get('currencyGet')
-#         toAmount = request.POST.get('toAmount')
-#         fromAmount = request.POST.get('fromAmount')
-#         filters = Post.objects.filter(area=areaPost)
-#         context['filters'] = filters
-#         return HttpResponseRedirect('/')
-#     return render(request, 'main/home.html', context)
-
-context = {'posts': Post.objects.all().order_by('name').values(), 'filters': []}
+context = {'posts': Post.objects.all().order_by('-created_date').values(), 'filters': []}
 filters=[]
 flag=0
 
-# Create your views here.
+
 def home(request):
     global flag
     global filters
@@ -57,7 +42,7 @@ def home(request):
         if fromAmount == '':
             fromAmount=1
         filters = Post.objects.filter(area__in=areaPost, cur_to_give__in=currencyGet,
-        cur_to_get__in=currencyGive,amount__lte=toAmount, amount__gte=fromAmount).order_by('name').values()
+        cur_to_get__in=currencyGive,amount__lte=toAmount, amount__gte=fromAmount).order_by('-created_date').values()
         print("^^  POST: ^^" + str(filters))
         if not filters:
             filters = [""]
@@ -123,13 +108,10 @@ class MainCreatePost(LoginRequiredMixin, CreateView):
     fields=['name', 'phone_number', 'cur_to_get', 'cur_to_give', 'amount', 'area', 'city', 'comment']
 
     def form_valid(self, form):
-        #form.instance.user = self.request.user
         obj=form.save(commit=False)
         obj.user = str(self.request.user)
         today = date.today()
-        today = today.strftime("%d/%m/%Y")
-        obj.created_date = str(today)
-        # need to add verification to fields.
+        obj.created_date = today
         obj.save()
         return super().form_valid(form)
 
