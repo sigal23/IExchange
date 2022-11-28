@@ -116,9 +116,9 @@
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name u-label-top">
                   <label for="id_name" class="u-label u-spacing-8 u-label-1">שם</label>
                   {% if form.name.value %}
-                  <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="" value="{{ form.name.value }}">
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="" value="{{ form.name.value }}">
                   {% else %}
-                  <input type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="">
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="">
                   {% endif %}
                 </div>
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-2">
@@ -454,9 +454,9 @@
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-label-top u-form-group-4">
                   <label for="id_amount" class="u-label u-spacing-8 u-label-4">סכום</label>
                   {% if form.amount.value %}
-                  <input type="number" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus" value="{{ form.amount.value }}">
+                  <input type="number" min="0" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus" value="{{ form.amount.value }}">
                   {% else %}
-                  <input type="number" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus">
+                  <input type="number" min="0" id="id_amount" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required" autofocus="autofocus">
                   {% endif %}
                 </div>
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-phone u-label-top u-form-group-5">
@@ -486,17 +486,17 @@
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-label-top u-form-group-7">
                   <label for="id_city" class="u-label u-spacing-8 u-label-7">עיר</label>
                   {% if form.city.value %}
-                  <input type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" value="{{ form.city.value }}">
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus" value="{{ form.city.value }}">
                   {% else %}
-                  <input type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7">
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus">
                   {% endif %}
                 </div>
-                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-textarea u-form-group-8">
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-textarea u-form-group-8" autofocus="autofocus">
                   <label for="id_comment" class="u-label">הערות</label>
                   {% if form.comment.value %}
-                  <textarea rows="4" cols="50" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">{{ form.comment.value }}</textarea>
+                  <textarea rows="4" cols="50" maxlength="100" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">{{ form.comment.value }}</textarea>
                   {% else %}
-                  <textarea rows="4" cols="50" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
+                  <textarea rows="4" cols="50" maxlength="100" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
                   {% endif %}
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
