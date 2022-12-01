@@ -65,7 +65,6 @@ def personal_post(request):
     context = {'posts': posts}
     return render(request, 'main/personal_post.html', context)
 
-
 def about(request):
     return render(request, 'main/about.html')
 

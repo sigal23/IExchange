@@ -54,16 +54,10 @@
       </div>
 
       <div class="u-custom-menu u-nav-container">
-        <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 0px;">עוד</a>
-          <div class="u-nav-popup">
-            <ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
-              <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href={% url 'manual' %}>אופן השימוש</a></li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href={% url 'precaution' %}>אמצעי זהירות</a></li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Questions-Answers.html">שאלות ותשובות</a></li>
-            </ul>
-          </div>
-          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'about' %} style="padding: 10px 0px;">אודות</a>
-          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href="Contact.html" style="padding: 10px 0px;">צור קשר</a>
+        <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+          <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'about' %} style="padding: 10px 0px;">אודות</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'precaution' %} style="padding: 10px 0px;">אמצעי זהירות</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'manual' %} style="padding: 10px 0px;">אופן השימוש</a>
           </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'create_post' %} style="padding: 10px 0px;">פוסט חדש</a>
           {% if user.is_authenticated %}
             </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'personal_post' %} style="padding: 10px 0px;">הפוסטים שלי</a>
@@ -78,19 +72,13 @@
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link">עוד</a>
-                    <div class="u-nav-popup">
-                      <ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="manual.html">אופן השימוש</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="precaution.html">אמצעי זהירות</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Questions-Answers.html">שאלות ותשובות</a></li>
-                      </ul>
-                    </div>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">אודות</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">צור קשר</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Create-Post.html">פוסט חדש</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="personal_post.html">הפוסטים שלי</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">דף הבית</a></li>
+                  <li class="u-nav-item">
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'manual' %}>אופן השימוש</a></li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'precaution' %}>אמצעי זהירות</a></li>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'about' %}>אודות</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'create_post' %}>פוסט חדש</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'personal_post' %}>הפוסטים שלי</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'home' %}>דף הבית</a></li>
                   </ul>
                 </div>
               </div>
