@@ -85,7 +85,6 @@ def signup(request):
                       {'form': UserCreationForm()})
     else:
         form = UserCreationForm(request.POST)
-        print("post")
         if form.is_valid():
             print("is valid")
             form.save()
@@ -96,10 +95,11 @@ def signup(request):
             print("user created")
             login(request, user)
             print("logged in")
-            return home(request)
+            return render(request, 'main/personal_post.html')
         else:
             print("not valid")
             error = form.errors
+            print(error)
             return render(request, 'registration/signup.html', {'form':UserCreationForm(), 'error': error})
 
 class MainCreatePost(LoginRequiredMixin, CreateView):
