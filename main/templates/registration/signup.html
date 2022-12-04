@@ -90,6 +90,11 @@
         <div class="u-align-center u-border-20 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-container-style u-custom-border u-group u-opacity u-opacity-75 u-radius-46 u-shape-round u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
             <h2 class="u-text u-text-custom-color-1 u-text-default u-text-1">יצירת חשבון</h2>
+            {% if error %}
+            <div dir="rtl" style="text-align: center;">
+              <p style="color:red;"> {{error}} </p>
+            </div>
+            {% endif %}
             <div class="u-form u-form-1">
               <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
                 {% csrf_token %}
@@ -100,11 +105,11 @@
                 </div>
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-group-2">
                   <label for="id_password1" class="u-label">סיסמה</label>
-                  <input type="password" id="id_password1" name="password1" autocomplete="new-password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <input type="password" id="id_password1" name="password1" autocomplete="new-password" autofocus="" required="" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                 </div>
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-group-3">
                   <label for="id_password2" class="u-label">אימות סיסמה</label>
-                  <input type="password" id="id_password2" name="password2" autocomplete="new-password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                  <input type="password" id="id_password2" name="password2" autocomplete="new-password" autofocus="" required="" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
                   <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1">צור חשבון<br>
