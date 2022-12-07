@@ -106,24 +106,27 @@ def signup(request):
 def get_error_msg(dict_error):
     if 'username' in dict_error:
         if dict_error['username'][0] == "A user with that username already exists.":
-            msg = "שם משתמש זה כבר קיים, אנא בחר שם משתמש אחר."
+            msg = "שם משתמש זה כבר קיים, אנא בחר שם משתמש אחר"
             return msg
+        if dict_error['username'][0] == "Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters.":
+            msg = "שם משתמש לא חוקי, עליו להכיל אותיות/מספרים/@/./+/-/_"
+            return msg      
 
     if 'password1' in dict_error:
         if dict_error['password1'][0] == "The two password fields didn’t match.":
             msg = "הסיסמאות אינן תואמות"
             return msg
         if dict_error['password1'][0] == "This password is too short. It must contain at least 8 characters.":
-            msg = "הסיסמה קצרה מידי. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה קצרה מידי. עליה להכיל לפחות 8 תווים"
             return msg
         if dict_error['password1'][0] == "This password is too common.":
-            msg = "הסיסמה חלשה מידי. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה חלשה מידי. עליה להכיל לפחות 8 תווים"
             return msg
         if dict_error['password1'][0] == "The password is too similar to the username.":
-            msg = "הסיסמה דומה מידי לשם המשתמש. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה דומה מידי לשם המשתמש. עליה להכיל לפחות 8 תווים"
             return msg
         if dict_error['password1'][0] == "This password is entirely numeric.":
-            msg = "הסיסמה מכילה רק מספרים. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה מכילה רק מספרים. עליה להכיל לפחות 8 תווים ובינהם אותיות"
             return msg
     
     if 'password2' in dict_error:
@@ -131,26 +134,19 @@ def get_error_msg(dict_error):
             msg = "הסיסמאות אינן תואמות"
             return msg
         if dict_error['password2'][0] == "This password is too short. It must contain at least 8 characters.":
-            msg = "הסיסמה קצרה מידי. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה קצרה מידי. עליה להכיל לפחות 8 תווים"
             return msg
         if dict_error['password2'][0] == "This password is too common.":
-            msg = "הסיסמה חלשה מידי. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה חלשה מידי. עליה להכיל לפחות 8 תווים"
             return msg
         if dict_error['password2'][0] == "The password is too similar to the username.":
-            msg = "הסיסמה דומה מידי לשם המשתמש. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה דומה מידי לשם המשתמש. עליה להכיל לפחות 8 תווים"
             return msg
         if dict_error['password2'][0] == "This password is entirely numeric.":
-            msg = "הסיסמה מכילה רק מספרים. עליה להכיל לפחות 8 תווים, הכוללים אותיות ומספרים"
+            msg = "הסיסמה מכילה רק מספרים. עליה להכיל לפחות 8 תווים ובינהם אותיות"
             return msg
 
             
-
-        
-
-        
-
-
-
 class MainCreatePost(LoginRequiredMixin, CreateView):
     model=Post
     fields=['name', 'phone_number', 'cur_to_get', 'cur_to_give', 'amount', 'area', 'city', 'comment']

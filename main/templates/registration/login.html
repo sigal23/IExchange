@@ -91,10 +91,11 @@
           <div class="u-container-layout u-container-layout-1">
             <h2 class="u-text u-text-custom-color-1 u-text-default u-text-1">התחברות</h2>
             <div class="u-form u-login-control u-form-1">
-            {% if error %}
-            <h3>Something went wrong</h3>
-            <p color="red">{{ error }}</p>
-            {% endif %}
+              {% if form.non_field_errors %}
+                <div dir="rtl" style="text-align: center;">
+                  <p style="color:red;">שם המשתמש או הסיסמה שגויים, אנא נסה שנית</p>
+                </div>
+              {% endif %}
               <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
                 {% csrf_token %}
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name">
