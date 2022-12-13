@@ -103,21 +103,20 @@
                 <h3> נותן {{ post.amount }} {{ post.cur_to_give }} תמורת {{ post.cur_to_get }} </h3>
                 <div style="width: 100%; display: table;">
                   <div style="display: table-row; height: 100px;">
-                      <div style="width: 50%; display: table-cell;">
+                      <div dir="rtl" style="width: 50%; display: table-cell;">
                         <h5><ins>עיר</ins>: {{ post.city }}</h5>
                         {% if post.comment %}
                         <h5><ins>הערות</ins>: {{ post.comment }}<h5>
                         {% endif %}
                         <h5><ins>תאריך</ins>: {{ post.created_date }}<h5> 
                       </div>
-                      <div style="display: table-cell;"> 
+                      <div dir="rtl" style="display: table-cell;"> 
                         <h5><ins>שם</ins>: {{ post.name }} </h5>
                         <h5><ins>טלפון</ins>: {{ post.phone_number }}</h5>
                         <h5><ins>איזור</ins>: {{ post.area }}</h5>
                       </div>
                   </div>
               </div>
-
                 <a href={% url 'delete_post' post.pk %} class="u-border-hover-palette-2-base u-border-none u-btn u-button-style u-none u-btn-1"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-1"><img src="{% static 'main/images/delete.png' %}" alt=""></span>
                 </a>
                 <a href={% url 'update_post' post.pk %} class="u-border-hover-palette-3-base u-border-none u-btn u-button-style u-none u-text-palette-1-base u-btn-2"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-2"><img src="{% static 'main/images/edit.png' %}" alt=""></span>
