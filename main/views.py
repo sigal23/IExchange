@@ -2,7 +2,7 @@
 from pickle import GET
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Offer
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model, login, authenticate
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -74,10 +74,10 @@ def manual(request):
 def precaution(request):
     return render(request, 'main/precaution.html')
 
-def post_list(request):
-    posts = Post.objects.all()
-    context = {'posts': posts}
-    return render(request, 'main/post_list.html', context)
+def home_offer(request):
+    offers = Offer.objects.all()
+    context = {'offers': offers}
+    return render(request, 'main/home_offer.html', context)
 
 def signup(request):
     if request.method == 'GET':
