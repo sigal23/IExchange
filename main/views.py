@@ -178,3 +178,15 @@ class MainDeletePost(LoginRequiredMixin, DeleteView):
         #if not todo.user == self.request.user:
         #    raise Http404('You dontt have permission to do this. go away you hacker')
         return post
+
+class MainCreateOffer(LoginRequiredMixin, CreateView):
+    model=Offer
+    fields=['name', 'phone_number', 'country', 'my_offer', 'area', 'city', 'comment']
+
+    def form_valid(self, form):
+        obj=form.save(commit=False)
+        obj.user = str(self.request.user)
+        today = date.today()
+        obj.created_date = today
+        obj.save()
+        return super().form_valid(form)

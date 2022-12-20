@@ -11,5 +11,7 @@ urlpatterns = [
     path('update_post/<int:pk>', views.MainUpdatePost.as_view(), name='update_post'),
     path('delete_post/<int:pk>', views.MainDeletePost.as_view(), name='delete_post'),
     path('home_offer', views.home_offer, name='home_offer'),
+    path('create_offer', views.MainCreateOffer.as_view(), name='create_offer'),
+
     
 ]

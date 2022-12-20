@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Create Offer</title>
+    <link rel="stylesheet" href="{% static '/main/css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static '/main/css/create_offer.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'main/js/jquery.js' %}" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'main/js/nicepage.js' %}" "="" defer=""></script>
+    <meta name="generator" content="Nicepage 4.17.7, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "IExchange",
+		"logo": "images/myLogo.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Create Offer">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  
+  
+  <body class="u-body u-xl-mode" data-lang="en">
+    <header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div><b>
+        {% if user.is_authenticated %}
+          מחובר כ- {{ user.username }} <a href={% url 'logout' %}>התנתק</a>
+        {% else %}
+          <a href={% url 'login' %}>התחבר</a> או <a href={% url 'signup' %}>צור חשבון</a>
+        {% endif %}
+      </b></div>
+    <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+      <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
+    </a>
+
+    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
+      <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+        <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-white" href="#" style="background-image: none;">
+          <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
+        </a>
+      </div>
+
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+          <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'about' %} style="padding: 10px 0px;">אודות</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'precaution' %} style="padding: 10px 0px;">אמצעי זהירות</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'manual' %} style="padding: 10px 0px;">אופן השימוש</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'create_post' %} style="padding: 10px 0px;">פוסט חדש</a>
+          {% if user.is_authenticated %}
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'personal_post' %} style="padding: 10px 0px;">הפוסטים שלי</a>
+          {% else %}
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'login' %} style="padding: 10px 0px;">הפוסטים שלי</a>
+          {% endif %}
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'home' %} style="padding: 10px 0px;">דף הבית</a></li>
+        </ul>																																																																																																																																																												 		  
+      </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav u-white">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
+                  <li class="u-nav-item">
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'manual' %}>אופן השימוש</a></li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'precaution' %}>אמצעי זהירות</a></li>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'about' %}>אודות</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'create_post' %}>פוסט חדש</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'personal_post' %}>הפוסטים שלי</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'home' %}>דף הבית</a></li>
+                  </ul>
+                </div>
+              </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70">
+          </div>
+        </div>
+      </nav>
+		</div>
+  </header>  
+  
+  <section class="u-clearfix u-gradient u-section-1" id="sec-4004" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-border-20 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-container-style u-custom-border u-group u-opacity u-opacity-75 u-radius-46 u-shape-round u-white u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <div class="u-align-center u-form u-form-1">
+              <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+			          {% csrf_token %}
+                {% if form.name.value %}
+                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">עריכת פוסט</h2>
+                {% else %}
+                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">יצירת פוסט</h2>
+                {% endif %}
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name u-label-top">
+                  <label for="id_name" class="u-label u-spacing-8 u-label-1">שם</label>
+                  {% if form.name.value %}
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="" value="{{ form.name.value }}">
+                  {% else %}
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="">
+                  {% endif %}
+                </div>
+				<div dir="rtl" style="text-align: right;" class="u-form-group u-form-phone u-label-top u-form-group-5">
+                  <label for="id_phone_number" class="u-label u-spacing-8 u-label-5">טלפון</label>
+                  {% if form.phone_number.value %}
+                  <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$" value="{{ form.phone_number.value }}">
+                  {% else %}
+                  <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$">
+                  {% endif %}
+                </div>
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-3">
+                  <label for="id_country" class="u-label">מדינה</label>
+                  <div>
+                    <select id="id_country" name="country" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                      {% if form.country.value %}
+                      <option>{{ form.country.value }}</option>
+                      {% else %}
+                      <option selected disabled hidden style='display: none' ></option>
+                      {% endif %}
+                      <option value="אוגנדה">אוגנדה</option>
+                      <option value="אוזבקיסטן">אוזבקיסטן</option>
+                      <option value="אוסטריה">אוסטריה</option>
+                      <option value="אוסטרליה">אוסטרליה</option>
+                      <option value="אוקראינה">אוקראינה</option>
+                      <option value="אורוגוואי">אורוגוואי</option>
+                      <option value="אזרבייג'ן">אזרבייג'ן</option>
+                      <option value="איחוד האמירויות הערביות">איחוד האמירויות הערביות</option>
+                      <option value="איטליה">איטליה</option>
+                      <option value="איי מרשל">איי מרשל</option>
+                      <option value="איי שלמה">איי שלמה</option>
+                      <option value="אינדונזיה">אינדונזיה</option>
+                      <option value="איסלנד">איסלנד</option>
+                      <option value="איראן">איראן</option>
+                      <option value="אירלנד">אירלנד</option>
+                      <option value="אל סלוודור">אל סלוודור</option>
+                      <option value="אלבניה">אלבניה</option>
+                      <option value="אלג'יריה">אלג'יריה</option>
+                      <option value="אנגולה">אנגולה</option>
+                      <option value="אנדורה">אנדורה</option>
+                      <option value="אנטיגואה וברבודה">אנטיגואה וברבודה</option>
+                      <option value="אסוואטיני">אסוואטיני</option>
+                      <option value="אסטוניה">אסטוניה</option>
+                      <option value="אפגניסטן">אפגניסטן</option>
+                      <option value="אקוודור">אקוודור</option>
+                      <option value="ארגנטינה">ארגנטינה</option>
+                      <option value="אריתריאה">אריתריאה</option>
+                      <option value="ארמניה">ארמניה</option>
+                      <option value="ארצות הברית">ארצות הברית</option>
+                      <option value="אתיופיה">אתיופיה</option>
+                      <option value="איי בהאמה">איי בהאמה</option>
+                      <option value="בהוטן">בהוטן</option>
+                      <option value="בוטסואנה">בוטסואנה</option>
+                      <option value="בולגריה">בולגריה</option>
+                      <option value="בוליביה">בוליביה</option>
+                      <option value="בוסניה והרצגובינה">בוסניה והרצגובינה</option>
+                      <option value="בורונדי">בורונדי</option>
+                      <option value="בורקינה פאסו">בורקינה פאסו</option>
+                      <option value="בחריין">בחריין</option>
+                      <option value="בלארוס">בלארוס</option>
+                      <option value="בלגיה">בלגיה</option>
+                      <option value="בליז">בליז</option>
+                      <option value="בנגלדש">בנגלדש</option>
+                      <option value="בנין">בנין</option>
+                      <option value="ברבדוס">ברבדוס</option>
+                      <option value="ברוניי">ברוניי</option>
+                      <option value="ברזיל">ברזיל</option>
+                      <option value="ג'יבוטי">ג'יבוטי</option>
+                      <option value="ג'מייקה">ג'מייקה</option>
+                      <option value="גאורגיה">גאורגיה</option>
+                      <option value="גאנה">גאנה</option>
+                      <option value="גבון">גבון</option>
+                      <option value="גואטמלה">גואטמלה</option>
+                      <option value="גיאנה">גיאנה</option>
+                      <option value="גינאה">גינאה</option>
+                      <option value="גינאה ביסאו">גינאה ביסאו</option>
+                      <option value="גינאה המשוונית">גינאה המשוונית</option>
+                      <option value="גמביה">גמביה</option>
+                      <option value="גרמניה">גרמניה</option>
+                      <option value="גרנדה">גרנדה</option>
+                      <option value="דומיניקה">דומיניקה</option>
+                      <option value="דנמרק">דנמרק</option>
+                      <option value="דרום אפריקה">דרום אפריקה</option>
+                      <option value="דרום סודאן">דרום סודאן</option>
+                      <option value="האיטי">האיטי</option>
+                      <option value="האיים המלדיביים">האיים המלדיביים</option>
+                      <option value="הודו">הודו</option>
+                      <option value="הולנד">הולנד</option>
+                      <option value="הונגריה">הונגריה</option>
+                      <option value="הונדורס">הונדורס</option>
+                      <option value="הממלכה המאוחדת">הממלכה המאוחדת</option>
+                      <option value="הפיליפינים">הפיליפינים</option>
+                      <option value="הרפובליקה הדומיניקנית">הרפובליקה הדומיניקנית</option>
+                      <option value="הרפובליקה הדמוקרטית של קונגו">הרפובליקה הדמוקרטית של קונגו</option>
+                      <option value="הרפובליקה המרכז-אפריקאית">הרפובליקה המרכז-אפריקאית</option>
+                      <option value="הרפובליקה העממית של סין">הרפובליקה העממית של סין</option>
+                      <option value="הרפובליקה של קונגו">הרפובליקה של קונגו</option>
+                      <option value="וייטנאם">וייטנאם</option>
+                      <option value="ונואטו">ונואטו</option>
+                      <option value="ונצואלה">ונצואלה</option>
+                      <option value="קריית הוותיקן">קריית הוותיקן</option>
+                      <option value="זימבבואה">זימבבואה</option>
+                      <option value="זמביה">זמביה</option>
+                      <option value="חוף השנהב">חוף השנהב</option>
+                      <option value="טג'יקיסטן">טג'יקיסטן</option>
+                      <option value="טובאלו">טובאלו</option>
+                      <option value="טוגו">טוגו</option>
+                      <option value="טונגה">טונגה</option>
+                      <option value="טורקיה">טורקיה</option>
+                      <option value="טורקמניסטן">טורקמניסטן</option>
+                      <option value="טנזניה">טנזניה</option>
+                      <option value="טרינידד וטובגו">טרינידד וטובגו</option>
+                      <option value="יוון">יוון</option>
+                      <option value="יפן">יפן</option>
+                      <option value="ירדן">ירדן</option>
+                      <option value="ישראל">ישראל</option>
+                      <option value="כווית">כווית</option>
+                      <option value="כף ורדה">כף ורדה</option>
+                      <option value="לאוס">לאוס</option>
+                      <option value="לבנון">לבנון</option>
+                      <option value="לוב">לוב</option>
+                      <option value="לוקסמבורג">לוקסמבורג</option>
+                      <option value="לטביה">לטביה</option>
+                      <option value="ליבריה">ליבריה</option>
+                      <option value="ליטא">ליטא</option>
+                      <option value="ליכטנשטיין">ליכטנשטיין</option>
+                      <option value="לסוטו">לסוטו</option>
+                      <option value="מאוריטניה">מאוריטניה</option>
+                      <option value="מאוריציוס">מאוריציוס</option>
+                      <option value="מאלי">מאלי</option>
+                      <option value="מדגסקר">מדגסקר</option>
+                      <option value="מוזמביק">מוזמביק</option>
+                      <option value="מולדובה">מולדובה</option>
+                      <option value="מונגוליה">מונגוליה</option>
+                      <option value="מונטנגרו">מונטנגרו</option>
+                      <option value="מונקו">מונקו</option>
+                      <option value="מזרח טימור">מזרח טימור</option>
+                      <option value="מיאנמר">מיאנמר</option>
+                      <option value="מיקרונזיה">מיקרונזיה</option>
+                      <option value="מלאווי">מלאווי</option>
+                      <option value="מלזיה">מלזיה</option>
+                      <option value="מלטה">מלטה</option>
+                      <option value="מצרים">מצרים</option>
+                      <option value="מקדוניה הצפונית">מקדוניה הצפונית</option>
+                      <option value="מקסיקו">מקסיקו</option>
+                      <option value="מרוקו">מרוקו</option>
+                      <option value="נאורו">נאורו</option>
+                      <option value="נורווגיה">נורווגיה</option>
+                      <option value="ניגריה">ניגריה</option>
+                      <option value="ניו זילנד">ניו זילנד</option>
+                      <option value="ניז'ר">ניז'ר</option>
+                      <option value="ניקרגואה">ניקרגואה</option>
+                      <option value="נמיביה">נמיביה</option>
+                      <option value="נפאל">נפאל</option>
+                      <option value="סאו טומה ופרינסיפה">סאו טומה ופרינסיפה</option>
+                      <option value="סודאן">סודאן</option>
+                      <option value="סוריה">סוריה</option>
+                      <option value="סורינאם">סורינאם</option>
+                      <option value="סיירה לאון">סיירה לאון</option>
+                      <option value="סיישל">סיישל</option>
+                      <option value="סין">סין</option>
+                      <option value="סינגפור">סינגפור</option>
+                      <option value="סלובניה">סלובניה</option>
+                      <option value="סלובקיה">סלובקיה</option>
+                      <option value="סמואה">סמואה</option>
+                      <option value="סן מרינו">סן מרינו</option>
+                      <option value="סנגל">סנגל</option>
+                      <option value="סנט וינסנט והגרנדינים">סנט וינסנט והגרנדינים</option>
+                      <option value="סנט לוסיה">סנט לוסיה</option>
+                      <option value="סנט קיטס ונוויס">סנט קיטס ונוויס</option>
+                      <option value="ספרד">ספרד</option>
+                      <option value="סרביה">סרביה</option>
+                      <option value="סרי לנקה">סרי לנקה</option>
+                      <option value="עומאן">עומאן</option>
+                      <option value="עיראק">עיראק</option>
+                      <option value="ערב הסעודית">ערב הסעודית</option>
+                      <option value="פולין">פולין</option>
+                      <option value="פורטוגל">פורטוגל</option>
+                      <option value="פיג'י">פיג'י</option>
+                      <option value="פינלנד">פינלנד</option>
+                      <option value="פלאו">פלאו</option>
+                      <option value="פנמה">פנמה</option>
+                      <option value="פפואה גינאה החדשה">פפואה גינאה החדשה</option>
+                      <option value="פקיסטן">פקיסטן</option>
+                      <option value="פרגוואי">פרגוואי</option>
+                      <option value="פרו">פרו</option>
+                      <option value="צ'אד">צ'אד</option>
+                      <option value="צ'ילה">צ'ילה</option>
+                      <option value="צ'כיה">צ'כיה</option>
+                      <option value="צרפת">צרפת</option>
+                      <option value="קובה">קובה</option>
+                      <option value="קולומביה">קולומביה</option>
+                      <option value="קומורו">קומורו</option>
+                      <option value="קוסטה ריקה">קוסטה ריקה</option>
+                      <option value="קוריאה הדרומית">קוריאה הדרומית</option>
+                      <option value="קוריאה הצפונית">קוריאה הצפונית</option>
+                      <option value="קזחסטן">קזחסטן</option>
+                      <option value="קטר">קטר</option>
+                      <option value="קירגיזסטן">קירגיזסטן</option>
+                      <option value="קיריבטי">קיריבטי</option>
+                      <option value="קמבודיה">קמבודיה</option>
+                      <option value="קמרון">קמרון</option>
+                      <option value="קנדה">קנדה</option>
+                      <option value="קניה">קניה</option>
+                      <option value="קפריסין">קפריסין</option>
+                      <option value="קרואטיה">קרואטיה</option>
+                      <option value="רואנדה">רואנדה</option>
+                      <option value="רומניה">רומניה</option>
+                      <option value="רוסיה">רוסיה</option>
+                      <option value="שוודיה">שוודיה</option>
+                      <option value="שווייץ">שווייץ</option>
+                      <option value="תאילנד">תאילנד</option>
+                      <option value="תוניסיה">תוניסיה</option>
+                      <option value="תימן">תימן</option>
+                    </select>
+                  </div>
+                </div>
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-textarea u-form-group-8" autofocus="autofocus">
+                  <label for="id_my_offer" class="u-label">ההצעה שלי</label>
+                  {% if form.my_offer.value %}
+                  <textarea rows="4" cols="50" maxlength="100" id="id_my_offer" name="my_offer" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">{{ form.my_offer.value }}</textarea>
+                  {% else %}
+                  <textarea rows="4" cols="50" maxlength="100" id="id_my_offer" name="my_offer" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
+                  {% endif %}
+                </div>
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-6">
+                  <label for="id_area" class="u-label">אזור</label>
+                  <div>
+                    <select id="id_area" name="area" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                      {% if form.area.value %}
+                      <option>{{ form.area.value }}</option>
+                      {% else %}
+                      <option selected disabled hidden style='display: none' ></option>
+                      {% endif %}
+                      <option value="צפון">צפון</option>
+                      <option value="מרכז">מרכז</option>
+                      <option value="ירושלים והסביבה">ירושלים והסביבה</option>
+                      <option value="דרום">דרום</option>
+                    </select>
+                  </div>
+                </div>
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-label-top u-form-group-7">
+                  <label for="id_city" class="u-label u-spacing-8 u-label-7">עיר</label>
+                  {% if form.city.value %}
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus" value="{{ form.city.value }}">
+                  {% else %}
+                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus">
+                  {% endif %}
+                </div>
+                
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-textarea u-form-group-8" autofocus="autofocus">
+                  <label for="id_comment" class="u-label">הערות</label>
+                  {% if form.comment.value %}
+                  <textarea rows="4" cols="50" maxlength="100" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">{{ form.comment.value }}</textarea>
+                  {% else %}
+                  <textarea rows="4" cols="50" maxlength="100" id="id_comment" name="comment" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
+                  {% endif %}
+                </div>
+                <div class="u-align-center u-form-group u-form-submit">
+                  <a href="#" onclick="window.history.back();" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-1 u-btn-2">בטל<span style="font-weight: 700;"></span></a>
+                  {% if form.name.value %}
+                  <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1 u-btn-2">עדכן<span style="font-weight: 700;"></span></a>
+                  {% else %}
+                  <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1 u-btn-2">פרסם<span style="font-weight: 700;"></span></a>
+                  {% endif %}
+                  <input type="submit" value="submit" class="u-form-control-hidden">                  
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+          <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">פרויקט גמר החוג למערכות מידע אוניברסיטת חיפה</p>
+      </div></footer>
+  
+</body></html>
