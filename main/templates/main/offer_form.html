@@ -95,26 +95,10 @@
               <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
 			          {% csrf_token %}
                 {% if form.name.value %}
-                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">עריכת פוסט</h2>
+                <h2 class="u-align-center u-text u-text-custom-color-0 u-text-default u-text-1">עריכת הצעה</h2>
                 {% else %}
-                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">יצירת פוסט</h2>
+                <h2 class="u-align-center u-text u-text-custom-color-0 u-text-default u-text-1">יצירת הצעה</h2>
                 {% endif %}
-                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name u-label-top">
-                  <label for="id_name" class="u-label u-spacing-8 u-label-1">שם</label>
-                  {% if form.name.value %}
-                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="" value="{{ form.name.value }}">
-                  {% else %}
-                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="">
-                  {% endif %}
-                </div>
-				<div dir="rtl" style="text-align: right;" class="u-form-group u-form-phone u-label-top u-form-group-5">
-                  <label for="id_phone_number" class="u-label u-spacing-8 u-label-5">טלפון</label>
-                  {% if form.phone_number.value %}
-                  <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$" value="{{ form.phone_number.value }}">
-                  {% else %}
-                  <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$">
-                  {% endif %}
-                </div>
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-3">
                   <label for="id_country" class="u-label">מדינה</label>
                   <div>
@@ -324,9 +308,26 @@
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-textarea u-form-group-8" autofocus="autofocus">
                   <label for="id_my_offer" class="u-label">ההצעה שלי</label>
                   {% if form.my_offer.value %}
-                  <textarea rows="4" cols="50" maxlength="100" id="id_my_offer" name="my_offer" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">{{ form.my_offer.value }}</textarea>
+                  <input type="text" id="id_my_offer" name="my_offer" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="" value="{{ form.my_offer.value }}">
                   {% else %}
-                  <textarea rows="4" cols="50" maxlength="100" id="id_my_offer" name="my_offer" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
+                  <input type="text" id="id_my_offer" name="my_offer" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="">
+                  {% endif %}
+                </div>
+                <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name u-label-top">
+                  <u><h5>פרטים ליצירת קשר</h5></u>
+                  <label for="id_name" class="u-label u-spacing-8 u-label-1">שם</label>
+                  {% if form.name.value %}
+                  <input onkeydown="return /[\p{L}\s]/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="" value="{{ form.name.value }}">
+                  {% else %}
+                  <input onkeydown="return /[\p{L}\s]/u.test(event.key)" type="text" id="id_name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input" required="">
+                  {% endif %}
+                </div>
+				        <div dir="rtl" style="text-align: right;" class="u-form-group u-form-phone u-label-top u-form-group-5">
+                  <label for="id_phone_number" class="u-label u-spacing-8 u-label-5">טלפון</label>
+                  {% if form.phone_number.value %}
+                  <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$" value="{{ form.phone_number.value }}">
+                  {% else %}
+                  <input type="tel" id="id_phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="" pattern="^(\(?05[01234589]\)?|0[23489]|077)-?\d{3}-?\d{4}$">
                   {% endif %}
                 </div>
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-select u-form-group-6">
@@ -348,9 +349,9 @@
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-label-top u-form-group-7">
                   <label for="id_city" class="u-label u-spacing-8 u-label-7">עיר</label>
                   {% if form.city.value %}
-                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus" value="{{ form.city.value }}">
+                  <input onkeydown="return /[\p{L}\s]/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus" value="{{ form.city.value }}">
                   {% else %}
-                  <input onkeydown="return /\p{L}/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus">
+                  <input onkeydown="return /[\p{L}\s]/u.test(event.key)" type="text" placeholder="" id="id_city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" required="required" autofocus="autofocus">
                   {% endif %}
                 </div>
                 
@@ -363,11 +364,11 @@
                   {% endif %}
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
-                  <a href="#" onclick="window.history.back();" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-1 u-btn-2">בטל<span style="font-weight: 700;"></span></a>
+                  <a href="#" onclick="window.history.back();" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-2 u-btn-1 u-btn-2">בטל<span style="font-weight: 700;"></span></a>
                   {% if form.name.value %}
-                  <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1 u-btn-2">עדכן<span style="font-weight: 700;"></span></a>
+                  <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-1 u-btn-2">עדכן<span style="font-weight: 700;"></span></a>
                   {% else %}
-                  <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1 u-btn-2">פרסם<span style="font-weight: 700;"></span></a>
+                  <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-1 u-btn-2">פרסם<span style="font-weight: 700;"></span></a>
                   {% endif %}
                   <input type="submit" value="submit" class="u-form-control-hidden">                  
                 </div>

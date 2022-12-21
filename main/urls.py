@@ -12,6 +12,8 @@ urlpatterns = [
     path('delete_post/<int:pk>', views.MainDeletePost.as_view(), name='delete_post'),
     path('home_offer', views.home_offer, name='home_offer'),
     path('create_offer', views.MainCreateOffer.as_view(), name='create_offer'),
+    path('personal_offer', views.personal_offer, name='personal_offer'),
+    path('update_offer/<int:pk>', views.MainUpdateOffer.as_view(), name='update_offer'),
+    path('delete_offer/<int:pk>', views.MainDeleteOffer.as_view(), name='delete_offer'),
 
-    
 ]

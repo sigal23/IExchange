@@ -65,6 +65,11 @@ def personal_post(request):
     context = {'posts': posts}
     return render(request, 'main/personal_post.html', context)
 
+def personal_offer(request):
+    offers = Offer.objects.filter(user=str(request.user))
+    context = {'offers': offers}
+    return render(request, 'main/personal_offer.html', context)
+
 def about(request):
     return render(request, 'main/about.html')
 
@@ -190,3 +195,26 @@ class MainCreateOffer(LoginRequiredMixin, CreateView):
         obj.created_date = today
         obj.save()
         return super().form_valid(form)
+
+class MainDeleteOffer(LoginRequiredMixin, DeleteView):
+    model=Offer
+    success_url = reverse_lazy('personal_offer')
+
+    def get_object(self):
+        offer = super(MainDeleteOffer, self).get_object()
+        #if not todo.user == self.request.user:
+        #    raise Http404('You dontt have permission to do this. go away you hacker')
+        return offer
+
+
+class MainUpdateOffer(LoginRequiredMixin, UpdateView):
+    model=Offer
+    fields=['name', 'phone_number', 'country', 'my_offer', 'area', 'city', 'comment']
+
+    def get_object(self):
+        offer = super(MainUpdateOffer, self).get_object()
+        #if not todo.user == self.request.user:
+        #    raise Http404('You dontt have permission to do this. go away you hacker')
+        return offer
+
+
