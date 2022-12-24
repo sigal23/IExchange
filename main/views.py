@@ -80,7 +80,7 @@ def precaution(request):
     return render(request, 'main/precaution.html')
 
 def home_offer(request):
-    offers = Offer.objects.all()
+    offers = Offer.objects.all().order_by('-created_date').values()
     context = {'offers': offers}
     return render(request, 'main/home_offer.html', context)
 

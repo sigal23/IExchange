@@ -22,7 +22,7 @@ class Post(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return "/"
+        return "/main/personal_post"
 
 
 # Create your models here.
@@ -41,4 +41,4 @@ class Offer(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return "/"
+        return "/main/personal_offer"
