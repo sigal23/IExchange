@@ -98,7 +98,7 @@
         <div class="u-align-center u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             {% for offer in offers.all %}
-            <div class="u-border-3 u-border-custom-color-4 u-container-style u-hover-feature u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1" style="text-align: right;">
+            <div class="u-align-center u-border-3 u-border-grey-60 u-container-style u-hover-feature u-list-item u-palette-3-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1" style="text-align: right;">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
                 <h3> נותן {{ offer.my_offer }} עבור {{ offer.country }} </h3>
                 <div style="width: 100%; display: table;">
@@ -117,9 +117,9 @@
                       </div>
                   </div>
               </div>
-                <a href={% url 'delete_offer' offer.pk %} class="u-border-hover-palette-2-base u-border-none u-btn u-button-style u-none u-btn-1"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-1"><img src="{% static 'main/images/delete.png' %}" alt=""></span>
+                <a href={% url 'delete_offer' offer.pk %} class="u-border-hover-palette-2-base u-border-none u-btn u-button-style u-none u-btn-1"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-1"><img src="{% static 'main/images/delete_offer.png' %}" alt=""></span>
                 </a>
-                <a href={% url 'update_offer' offer.pk %} class="u-border-hover-palette-3-base u-border-none u-btn u-button-style u-none u-text-palette-1-base u-btn-2"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-2"><img src="{% static 'main/images/edit.png' %}" alt=""></span>
+                <a href={% url 'update_offer' offer.pk %} class="u-border-hover-palette-3-base u-border-none u-btn u-button-style u-none u-text-palette-1-base u-btn-2"><span class="u-file-icon u-icon u-opacity u-opacity-85 u-text-palette-1-base u-icon-2"><img src="{% static 'main/images/edit_offer.png' %}" alt=""></span>
                 </a>
               </div>
             </div>
