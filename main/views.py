@@ -62,16 +62,17 @@ def home(request):
 
 def personal_post(request):
     posts = Post.objects.filter(user=str(request.user))
-    context = {'posts': posts}
+    offers = Offer.objects.filter(user=str(request.user))
+    context = {'posts': posts, 'offers': offers}
     return render(request, 'main/personal_post.html', context)
 
-def personal_offer(request):
-    offers = Offer.objects.filter(user=str(request.user))
-    context = {'offers': offers}
-    return render(request, 'main/personal_offer.html', context)
+# def personal_offer(request):
+#     offers = Offer.objects.filter(user=str(request.user))
+#     context = {'offers': offers}
+#     return render(request, 'main/personal_offer.html', context)
 
-def about(request):
-    return render(request, 'main/about.html')
+# def about(request):
+#     return render(request, 'main/about.html')
 
 def manual(request):
     return render(request, 'main/manual.html')
@@ -167,7 +168,8 @@ class MainCreatePost(LoginRequiredMixin, CreateView):
 class MainUpdatePost(LoginRequiredMixin, UpdateView):
     model=Post
     fields=['name', 'phone_number', 'cur_to_get', 'cur_to_give', 'amount', 'area', 'city', 'comment']
-
+    success_url = reverse_lazy('personal_post')
+    
     def get_object(self):
         post = super(MainUpdatePost, self).get_object()
         #if not todo.user == self.request.user:
@@ -198,7 +200,7 @@ class MainCreateOffer(LoginRequiredMixin, CreateView):
 
 class MainDeleteOffer(LoginRequiredMixin, DeleteView):
     model=Offer
-    success_url = reverse_lazy('personal_offer')
+    success_url = reverse_lazy('personal_post')
 
     def get_object(self):
         offer = super(MainDeleteOffer, self).get_object()
@@ -209,6 +211,7 @@ class MainDeleteOffer(LoginRequiredMixin, DeleteView):
 
 class MainUpdateOffer(LoginRequiredMixin, UpdateView):
     model=Offer
+    success_url = reverse_lazy('personal_post')
     fields=['name', 'phone_number', 'country', 'my_offer', 'area', 'city', 'comment']
 
     def get_object(self):

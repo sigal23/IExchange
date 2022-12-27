@@ -32,14 +32,14 @@
   <body class="u-body u-xl-mode" data-lang="en">
     <header class="u-border-7 u-border-custom-color-4 u-clearfix u-header u-palette-1-light-3 u-sticky u-sticky-9553 u-header" id="sec-bf95">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div><b>
+        <div dir="rtl" style="text-align: left;"><b>
         {% if user.is_authenticated %}
           מחובר כ- {{ user.username }} <a href={% url 'logout' %}>התנתק</a>
         {% else %}
           <a href={% url 'login' %}>התחבר</a> או <a href={% url 'signup' %}>צור חשבון</a>
         {% endif %}
       </b></div>
-    <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+    <a href={% url 'home' %} class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
       <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
     </a>
 
@@ -54,17 +54,15 @@
       <div class="u-custom-menu u-nav-container">
         <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 0px;">קח לחו"ל</a><div class="u-nav-popup"><ul class="u-border-1 u-border-grey-30 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href={% url 'home_offer' %}>כל ההצעות</a>
         </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href={% url 'create_offer' %}>הצעה חדשה</a>
-        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href={% url 'personal_offer' %}>ההצעות שלי</a>
         </li>
       </div>
-          <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'about' %} style="padding: 10px 0px;">אודות</a>
-          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'precaution' %} style="padding: 10px 0px;">אמצעי זהירות</a>
+          <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'precaution' %} style="padding: 10px 0px;">אמצעי זהירות</a>
           </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'manual' %} style="padding: 10px 0px;">אופן השימוש</a>
-          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'create_post' %} style="padding: 10px 0px;">פוסט חדש</a>
+          </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'create_post' %} style="padding: 10px 0px;">מודעה חדשה</a>
           {% if user.is_authenticated %}
-            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'personal_post' %} style="padding: 10px 0px;">הפוסטים שלי</a>
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'personal_post' %} style="padding: 10px 0px;">הפרסומים שלי</a>
           {% else %}
-            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'login' %} style="padding: 10px 0px;">הפוסטים שלי</a>
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'login' %} style="padding: 10px 0px;">הפרסומים שלי</a>
           {% endif %}
           </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-4 u-border-hover-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-4 u-text-grey-90 u-text-hover-grey-90" href={% url 'home' %} style="padding: 10px 0px;">דף הבית</a></li>
         </ul>																																																																																																																																																												 		  
@@ -77,9 +75,8 @@
                   <li class="u-nav-item">
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'manual' %}>אופן השימוש</a></li>
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'precaution' %}>אמצעי זהירות</a></li>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'about' %}>אודות</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'create_post' %}>פוסט חדש</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'personal_post' %}>הפוסטים שלי</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'create_post' %}>מודעה חדשה</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'personal_post' %}>הפרסומים שלי</a>
                     </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href={% url 'home' %}>דף הבית</a></li>
                   </ul>
                 </div>
@@ -100,9 +97,9 @@
                 {% csrf_token %}
 
                 {% if form.name.value %}
-                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">עריכת פוסט</h2>
+                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">עריכת מודעה</h2>
                 {% else %}
-                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">יצירת פוסט</h2>
+                <h2 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">יצירת מודעה</h2>
                 {% endif %}
                 <div dir="rtl" style="text-align: right;" class="u-form-group u-form-name u-label-top">
                   <label for="id_name" class="u-label u-spacing-8 u-label-1">שם</label>
@@ -511,7 +508,7 @@
     
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-3636"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
+        <a href={% url 'home' %} class="u-image u-logo u-image-1" data-image-width="800" data-image-height="468">
           <img src="{% static 'main/images/myLogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-1">פרויקט גמר החוג למערכות מידע אוניברסיטת חיפה</p>
