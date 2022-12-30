@@ -99,10 +99,10 @@
           </div>
         </div>
         <div class="u-align-center u-border-3 u-border-grey-60 u-form u-palette-3-light-2 u-radius-50 u-form-1">
-          <form action="{% url 'home_offer' %}" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-0 u-inner-form" source="email" name="form-1" style="padding: 5px;">
+          <form action="{% url 'home_offer' %}" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-0 u-inner-form" source="custom" name="form-1" style="padding: 5px;">
             {% csrf_token %}
             {{ form.as_p }}
-            <div class="u-align-center u-form-group u-form-submit" style="width:0px;">
+            <div class="u-align-left u-form-group u-form-submit">
               <a href="{% url 'home_offer' %}" class="u-align-left u-border-2 u-border-grey-60 u-border-hover-grey-50 u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-3-base u-palette-3-light-2 u-radius-49 u-text-custom-color-3"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 52.966 52.966" x="0px" y="0px" style="width: 1em; height: 1em;"><circle style="fill:#57ABC1;" cx="21.983" cy="21" r="20"></circle><line style="fill:none;stroke:#556080;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="35.437" y1="35.798" x2="50.983" y2="51.966"></line><path style="fill:#7CCBD8;" d="M3.002,27.253c0.848,2.582,2.24,5.018,4.167,7.146L35.382,6.186
                 c-2.129-1.928-4.564-3.319-7.146-4.167L3.002,27.253z"></path><path style="fill:#556080;" d="M21.983,42c-11.58,0-21-9.42-21-21s9.42-21,21-21s21,9.42,21,21S33.562,42,21.983,42z M21.983,2
                 c-10.477,0-19,8.523-19,19s8.523,19,19,19s19-8.523,19-19S32.459,2,21.983,2z"></path></svg><img></span>&nbsp;
@@ -110,9 +110,10 @@
               <input type="submit" value="submit" class="u-form-control-hidden" onClick=setTimeout(location.reload.bind(location),100);>
               <label for="select-700a" class="u-label"> </label>
             </div>
-            <div class="u-form-group u-form-select u-label-left u-form-group-1">
+            <div class="u-form-group u-form-select u-label-left u-form-group-1" dir="rtl">
+              <label for="select-0447" class="u-label">מדינה</label>
               <div>
-                <select style="width:200px;" id="select-0447" name="country" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-1">
+                <select style="width:190px;" id="select-0447" name="country" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-1">
                   <option selected disabled hidden style='display: none'></option>
                   <option value="אוגנדה">אוגנדה</option>
                   <option value="אוזבקיסטן">אוזבקיסטן</option>
@@ -310,7 +311,6 @@
                   <option value="תימן">תימן</option>
                 </select>
               </div>
-              <label for="select-0447" class="u-label">מדינה</label>
             </div>
           </form>
         </div>
