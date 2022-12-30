@@ -16,6 +16,9 @@ context = {'posts': Post.objects.all().order_by('-created_date').values(), 'filt
 filters=[]
 flag=0
 
+context_offer = {'offers': Offer.objects.all().order_by('-created_date').values(), 'filters': []}
+filters_offer=[]
+flag_offer=0
 
 def home(request):
     global flag
@@ -81,9 +84,27 @@ def precaution(request):
     return render(request, 'main/precaution.html')
 
 def home_offer(request):
-    offers = Offer.objects.all().order_by('-created_date').values()
-    context = {'offers': offers}
-    return render(request, 'main/home_offer.html', context)
+    global flag_offer
+    global filters_offer
+    global context_offer
+    if request.method == 'POST' and request.POST.get('country') is not None:
+        country=[request.POST.get('country')]
+        filters_offer = Offer.objects.filter(country__in=country).order_by('-created_date').values()
+        if not filters_offer:
+            filters_offer = [""]
+        flag_offer=1
+    else:
+        print(flag_offer)
+        if flag_offer==1:
+            print("##  SHOW FILTER: ##" + str(filters_offer))
+            context_offer['filters'] = filters_offer
+            flag_offer=0
+        else:
+            context_offer['filters'] = []
+            filters_offer=[]
+            print("&&  SHOW ALL: &&" + str(filters_offer))
+    return render(request, 'main/home_offer.html', context_offer)
+
 
 def signup(request):
     if request.method == 'GET':
