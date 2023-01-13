@@ -28,38 +28,31 @@ def home(request):
         currencyTypes = ['אירו','אפגני אפגני','אריארי מלגשי','בהט תאילנדי','בוליביאנו','בוליבר ונצואלי','ביר אתיופי','בלבואה פנמי','גוורני פראגוואי','גורד האיטי','גילדר של האנטילים ההולנדיים','גריבנה אוקראיני','דולר אוסטרלי','דולר איי שלמה','דולר אמריקאי','דולר בהאמי','דולר בליזי','דולר ברבדיאני','דולר ברוניי','דולר ברמודה','דולר ג׳מייקני','דולר גיאני','דולר הונג קונגי','דולר טייוואני חדש','דולר טרינידדי','דולר ליברי','דולר מזרח קריבי','דולר ניו זילנדי','דולר נמיבי','דולר סורינאמי','דולר סינגפורי','דולר פיג׳י','דולר קיימאני','דולר קנדי','דונג וייטנאמי','דינר אלג׳ירי','דינר בחרייני','דינר טוניסאי','דינר ירדני','דינר כוויתי','דינר לובי','דינר מקדוני','דינר סרבי','דינר עיראקי','דירהם מרוקאי','דירהם של איחוד הנסיכויות הערביות','דלאסי גמבי','דראם ארמני','ואטו של ונואטו','וון דרום קוריאני','וון צפון קוריאני','זלוטי פולני','טאלה סמואי','טאקה בנגלדשי','טוגרוג מונגולי','טנגה קזחסטני','יואן סיני','ין יפני','כתר איסלנדי','כתר דני','כתר נורווגי','כתר שוודי','לאו רומני','לב בולגרי','לוטי לסותי','ליאו מולדובני','ליאון סיירה לאוני','לילנגני סווזי','לירה דרום-סודנית','לירה טורקית חדשה','לירה לבנונית','לירה מצרית','לירה סודנית','לירה סורית','לירה שטרלינג','לירה של איי פוקלנד','למפירה הונדורי','לק אלבני','לרי גאורגי','מאוריטניה אוגיאיה','מאנאט אזרביג׳ני','מאנאט טורקמני','מארק בר המרה של בוסניה־הרצגובינה','מטיקל מוזמביני','נאירה ניגרי','נאקפה אריתראי','נגולטרום בהוטני','סאו טומה ופרינסיפה דברה','סדי גאני','סול פרואני','סום אוזבקי','סום קירגיזי','סומוני טג׳קיסטני','פאונד גיברלטר','פאונד סנט הלני','פאנגה טונגי','פולה בוצוואני','פורינט הונגרי','פזו דומיניקני','פזו מקסיקני','פזו פיליפיני','פזו קובני','פטקה של מקאו','פלורין של ארובה','פסו אורוגוואי','פסו ארגנטינאי','פסו צ׳ילאני','פסו קולומביאני','פרנק בורונדי','פרנק ג׳יבוטי','פרנק גינאי','פרנק פולינזיה הצרפתית','פרנק קומורואי','פרנק קונגולזי','פרנק רואנדי','פרנק שוויצרי','קואנזה אנגולי','קואצ׳ה מלאוי','קוואצ׳ה זמבית','קולון סלבדורי','קולון קוסטה־ריקני','קונה קרואטי','קורדובה ניקרגואה','קורונה צ׳כית','קיאט מיאנמרי','קינה של פפואה גינאה החדשה','קיפ לאי','קצל גואטמלי','ראנד דרום אפריקאי','רובל בלרוסי','רובל רוסי','רופי הודי','רופי מאוריציני','רופי נפאלי','רופי סיישלי','רופי סרי לנקי','רופי פקיסטני','רופיה אינדונזית','רופיה מלדיבית','ריאל איראני','ריאל ברזילאי','ריאל סעודי','ריאל עומאני','ריאל קטארי','ריאל תימני','ריל קמבודי','רינגיט מלזי','שילינג אוגנדי','שילינג טנזני','שילינג סומאלי','שילינג קנייאתי','שקל חדש']
         currencyGive = [request.POST.get('currencyGive')]
         if currencyGive == [None]:
-            print("cur give none")
             currencyGive = currencyTypes
         areaPost = [request.POST.get('area')]
         if areaPost == [None]:
             areaPost = ['צפון','דרום','ירושלים והסביבה','מרכז']
         currencyGet = [request.POST.get('currencyGet')]
         if currencyGet == [None]:
-            print("cur get none")
             currencyGet = currencyTypes
         toAmount = request.POST.get('toAmount')
         if toAmount == '':
             toAmount=1000000
-        print(toAmount)
         fromAmount = request.POST.get('fromAmount')
         if fromAmount == '':
             fromAmount=1
         filters = Post.objects.filter(area__in=areaPost, cur_to_give__in=currencyGet,
         cur_to_get__in=currencyGive,amount__lte=toAmount, amount__gte=fromAmount).order_by('-created_date').values()
-        print("^^  POST: ^^" + str(filters))
         if not filters:
             filters = [""]
         flag=1
     else:
-        print(flag)
         if flag==1:
-            print("##  SHOW FILTER: ##" + str(filters))
             context['filters'] = filters
             flag=0
         else:
             context['filters'] = []
             filters=[]
-            print("&&  SHOW ALL: &&" + str(filters))
     return render(request, 'main/home.html', context)
 
 
@@ -94,15 +87,12 @@ def home_offer(request):
             filters_offer = [""]
         flag_offer=1
     else:
-        print(flag_offer)
         if flag_offer==1:
-            print("##  SHOW FILTER: ##" + str(filters_offer))
             context_offer['filters'] = filters_offer
             flag_offer=0
         else:
             context_offer['filters'] = []
             filters_offer=[]
-            print("&&  SHOW ALL: &&" + str(filters_offer))
     return render(request, 'main/home_offer.html', context_offer)
 
 
@@ -113,21 +103,16 @@ def signup(request):
     else:
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            print("is valid")
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             authenticate(username=username, password=raw_password)
             user = get_user_model().objects.get(username=username)
-            print("user created")
             login(request, user)
-            print("logged in")
             return render(request, 'main/personal_post.html')
         else:
-            print("not valid")
             error = form.errors
             err_msg = get_error_msg(dict(error))
-            print(dict(error))
             return render(request, 'registration/signup.html', {'form':UserCreationForm(), 'error': err_msg})
 
 def get_error_msg(dict_error):
